@@ -1,0 +1,47 @@
+{
+  "name": "ad-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Egor-Sapronov/ad-helper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Egor-Sapronov/ad-helper/issues"
+  },
+  "homepage": "https://github.com/Egor-Sapronov/ad-helper#readme",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "bower": "^1.4.1",
+    "bower-webpack-plugin": "^0.1.8",
+    "cookie-parser": "^1.3.4",
+    "css-loader": "^0.14.4",
+    "debug": "~2.0.0",
+    "express": "^4.12.3",
+    "express-session": "^1.10.4",
+    "extract-text-webpack-plugin": "^0.8.1",
+    "file-loader": "^0.8.4",
+    "imports-loader": "^0.6.4",
+    "jade": "^1.9.2",
+    "jsx-loader": "^0.13.2",
+    "method-override": "^2.3.2",
+    "mongoose": "^4.0.5",
+    "react": "^0.13.3",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.9.10"
+  },
+  "devDependencies": {
+    "babel-core": "^5.6.1",
+    "babel-loader": "^5.1.4",
+    "chai": "^2.3.0",
+    "mocha": "^2.2.4",
+    "node-env-file": "^0.1.7"
+  }
+}
