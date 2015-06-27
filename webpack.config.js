@@ -14,7 +14,7 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['','.js', '.jsx']
+        extensions: ['', '.js', '.jsx']
     },
     module: {
         loaders: [
@@ -26,7 +26,8 @@ module.exports = {
             { test: /\.ttf$/, loader: "url?limit=10000&minetype=application/octet-stream" },
             { test: /\.eot$/, loader: "file" },
             { test: /\.svg$/, loader: "url?limit=10000&minetype=image/svg+xml" },
-            { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel-loader' }
+            { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel-loader' },
+            { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' }
         ]
     },
     plugins: [

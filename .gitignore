@@ -29,3 +29,7 @@ node_modules
 bower_components
 
 web/dist
+
+.idea
+
+.idea/

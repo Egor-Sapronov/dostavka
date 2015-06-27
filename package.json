@@ -42,6 +42,7 @@
     "babel-loader": "^5.1.4",
     "chai": "^2.3.0",
     "mocha": "^2.2.4",
-    "node-env-file": "^0.1.7"
+    "node-env-file": "^0.1.7",
+    "stylus-loader": "^1.2.1"
   }
 }
