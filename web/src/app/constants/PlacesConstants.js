@@ -6,6 +6,7 @@ export default {
     ActionTypes: keyMirror({
         CREATE_PLACE: null,
         UPDATE_PLACE: null,
-        DELETE_PLACE: null
+        DELETE_PLACE: null,
+        POST_REQUEST: null
     })
 }

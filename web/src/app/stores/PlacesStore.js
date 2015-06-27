@@ -4,6 +4,7 @@ import EventEmitter from 'eventemitter3';
 import Immutable from 'immutable';
 import AppDispatcher from '../AppDispatcher.js';
 import PlacesConstants from '../constants/PlacesConstants.js';
+import {postRequest} from '../utils/webApiUtils.js';
 
 let ActionTypes = PlacesConstants.ActionTypes;
 
@@ -30,6 +31,11 @@ class PlacesStore extends EventEmitter {
                     this.deletePlace(action.placeId);
                     this.emitChange();
                     break;
+                case ActionTypes.POST_REQUEST:
+                    postRequest(action.data)
+                        .then((result)=> {
+                            console.log(result);
+                        });
                 default:
             }
         });

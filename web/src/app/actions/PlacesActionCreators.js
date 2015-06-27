@@ -22,5 +22,11 @@ export default {
             type: ActionTypes.DELETE_PLACE,
             placeId: placeId
         });
+    },
+    postRequest: function (data) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.POST_REQUEST,
+            data: data
+        });
     }
 }
