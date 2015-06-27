@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
+import PlacesActionCreates from '../actions/PlacesActionCreators.js';
 import InputField from './InputField.jsx';
 
 class PlaceListItem extends Component {
@@ -21,7 +22,11 @@ class PlaceListItem extends Component {
             <div>
                 <div className="panel panel-success">
                     <div className="panel-heading">
-                        <h3 className="panel-title">{this.state.placeIndex === 0 ? 'Откуда' : 'Куда'}</h3>
+                        <h3 className="panel-title">{this.state.placeIndex === 0 ? 'Откуда' : 'Куда'}
+                            <button onClick={this.handleDelete.bind(this)} type="button" className="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </h3>
                     </div>
                     <div className="panel-body">
                         <div className='col-xs-12 col-md-5'>
@@ -99,8 +104,12 @@ class PlaceListItem extends Component {
         });
     }
 
+    handleDelete() {
+        PlacesActionCreates.deletePlace(this.props.placeId);
+    }
+
     handleChange() {
-        this.props.onChange(this.props.placeId, this.state);
+        PlacesActionCreates.updatePlace(this.props.placeId, this.state);
     }
 }
 

@@ -26,9 +26,12 @@ class PlacesStore extends EventEmitter {
                     this.updatePlace(action.placeId, action.place);
                     this.emitChange();
                     break;
+                case ActionTypes.DELETE_PLACE:
+                    this.deletePlace(action.placeId);
+                    this.emitChange();
+                    break;
                 default:
             }
-
         });
     }
 
@@ -42,6 +45,10 @@ class PlacesStore extends EventEmitter {
 
     updatePlace(placeId, place) {
         this.places = this.places.set(placeId, place);
+    }
+
+    deletePlace(placeId) {
+        this.places = this.places.remove(placeId);
     }
 
     emitChange() {

@@ -16,5 +16,11 @@ export default {
             placeId: placeId,
             place: place
         });
+    },
+    deletePlace: function (placeId) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.DELETE_PLACE,
+            placeId: placeId
+        });
     }
 }

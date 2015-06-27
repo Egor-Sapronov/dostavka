@@ -28,7 +28,7 @@ class PlacesList extends Component {
             <div>
                 <h1>{this.state.price + ' Руб'}</h1>
                 {this.state.places.map(function (place, index) {
-                    return <PlaceListItem {...place} onChange={this.placeChange.bind(this)} placeId={index} key={index} />
+                    return <PlaceListItem {...place} placeId={index} key={index} />
                 }.bind(this))}
                 <button className='btn btn-primary' onClick={this.handleAdd.bind(this)} >Add</button>
                 <button className='btn btn-success' onClick={this.handleSubmit.bind(this)} >Submit</button>
@@ -49,10 +49,6 @@ class PlacesList extends Component {
 
     handleSubmit() {
         console.log(PlacesStore.getPlaces());
-    }
-
-    placeChange(placeId, place) {
-        PlacesActionCreates.updatePlace(placeId, place);
     }
 }
 
