@@ -1,5 +1,7 @@
 'use strict';
 
+import AppServerActionCreators from '../actions/AppServerActionsCreators.js';
+
 const urls = {
     requests: '/api/requests'
 };
@@ -16,6 +18,21 @@ function json(response) {
     return response.json();
 }
 
+export function getRequests() {
+    return fetch(urls.requests, {
+        method: 'GET',
+        headers: {
+            'accept': 'application/json',
+            'contentType': 'application/json'
+        }
+    })
+        .then(status)
+        .then(json)
+        .then(function (result) {
+            AppServerActionCreators.receiveRequests(result);
+        });
+}
+
 export function postRequest(data) {
     return fetch(urls.requests, {
         method: 'POST',
@@ -25,8 +42,5 @@ export function postRequest(data) {
         body: JSON.stringify(data)
     })
         .then(status)
-        .then(json)
-        .then(function (result) {
-
-        });
+        .then(json);
 }

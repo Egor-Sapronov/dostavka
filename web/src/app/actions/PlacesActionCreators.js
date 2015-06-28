@@ -1,7 +1,7 @@
 import AppDispatcher from '../AppDispatcher.js';
-import PlacesConstants from '../constants/PlacesConstants.js';
+import AppConstants from '../constants/AppConstants.js';
 
-let ActionTypes = PlacesConstants.ActionTypes;
+let ActionTypes = AppConstants.ActionTypes;
 
 export default {
     createPlace: function (place) {

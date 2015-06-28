@@ -3,10 +3,10 @@
 import EventEmitter from 'eventemitter3';
 import Immutable from 'immutable';
 import AppDispatcher from '../AppDispatcher.js';
-import PlacesConstants from '../constants/PlacesConstants.js';
+import AppConstants from '../constants/AppConstants.js';
 import {postRequest} from '../utils/webApiUtils.js';
 
-let ActionTypes = PlacesConstants.ActionTypes;
+let ActionTypes = AppConstants.ActionTypes;
 
 const CHANGE_EVENT = 'change';
 const PLACE_PRICE = 150;

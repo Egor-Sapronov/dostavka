@@ -17,6 +17,10 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+app.get('/requests', function (req, res) {
+    res.render('requests');
+});
+
 app.get('/api/requests', function (req, res) {
     return db
         .RequestModel
@@ -28,7 +32,6 @@ app.get('/api/requests', function (req, res) {
 });
 
 app.post('/api/requests', function (req, res) {
-    console.log(req.body);
     var request = new db.RequestModel(req.body);
     request
         .save(function (err, result) {

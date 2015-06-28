@@ -3,6 +3,7 @@
 import React, {Component} from 'react';
 import Header from './header.jsx';
 import PlacesList from './PlacesList.jsx';
+import RequestsList from './RequestsList.jsx.js';
 import PlacesActionCreates from '../actions/PlacesActionCreators.js';
 import PlacesStore from '../stores/PlacesStore.js';
 
@@ -15,6 +16,7 @@ class App extends Component {
                     <PlacesList />
                     <button className='btn btn-primary' onClick={this.handleAdd.bind(this)} >Add</button>
                     <button className='btn btn-success' onClick={this.handleSubmit.bind(this)} >Submit</button>
+                    <RequestsList />
                 </div>
             </div>
         );

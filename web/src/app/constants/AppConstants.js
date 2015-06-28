@@ -7,6 +7,8 @@ export default {
         CREATE_PLACE: null,
         UPDATE_PLACE: null,
         DELETE_PLACE: null,
-        POST_REQUEST: null
+        POST_REQUEST: null,
+        GET_REQUESTS: null,
+        RECEIVE_REQUESTS: null
     })
 }
