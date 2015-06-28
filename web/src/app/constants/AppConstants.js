@@ -11,6 +11,8 @@ export default {
         GET_REQUESTS: null,
         RECEIVE_REQUESTS: null,
         GET_REQUEST: null,
-        RECEIVE_REQUEST: null
+        RECEIVE_REQUEST: null,
+        RECEIVE_UPDATED_REQUEST: null,
+        PUT_REQUEST: null
     })
 }

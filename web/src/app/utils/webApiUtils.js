@@ -33,6 +33,22 @@ export function getRequest(id) {
         });
 }
 
+export function putRequest(request, places) {
+    request.places = places;
+    return fetch(urls.requests + '/' + request._id, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(request)
+    })
+        .then(status)
+        .then(json)
+        .then(function (result) {
+            return AppServerActionCreators.receiveUpdatedRequest(result);
+        });
+}
+
 export function getRequests() {
     return fetch(urls.requests, {
         method: 'GET',
@@ -44,7 +60,7 @@ export function getRequests() {
         .then(status)
         .then(json)
         .then(function (result) {
-            AppServerActionCreators.receiveRequests(result);
+            return AppServerActionCreators.receiveRequests(result);
         });
 }
 

@@ -47,6 +47,16 @@ app.get('/api/requests/:id', function (req, res) {
         });
 });
 
+app.put('/api/requests/:id', function (req, res) {
+    return db
+        .RequestModel
+        .update({_id: req.params.id}, req.body, {})
+        .exec()
+        .then(function (result) {
+            res.status(200).send(result);
+        });
+});
+
 app.post('/api/requests', function (req, res) {
     var request = new db.RequestModel(req.body);
     request
