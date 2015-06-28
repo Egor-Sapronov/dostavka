@@ -23,7 +23,7 @@ class RequestsListItem extends Component {
                         <li className='list-group-item'>{'Комментарий: ' + place.comment}</li>
                     </ul>
                 })}
-                <a href={'/requests/' + this.props._id}>Редактировать</a>
+                <a href={'/requests/' + this.props._id}>Редактировать </a>
                 <a href='javascript:void(0)' onClick={this.handleDeleteClick.bind(this)}>Удалить</a>
             </li>
         );
