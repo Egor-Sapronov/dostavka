@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import RequestsActionsCreators from '../actions/RequestsActionsCreators.js';
+import AppServerActionsCreators from '../actions/AppServerActionsCreators.js';
 import RequestsStore from '../stores/RequestsStore.js';
 
 class RequestsListItem extends Component {
@@ -23,8 +24,13 @@ class RequestsListItem extends Component {
                     </ul>
                 })}
                 <a href={'/requests/' + this.props._id}>Редактировать</a>
+                <a href='javascript:void(0)' onClick={this.handleDeleteClick.bind(this)}>Удалить</a>
             </li>
         );
+    }
+
+    handleDeleteClick() {
+        AppServerActionsCreators.deleteRequest(this.props._id);
     }
 }
 
@@ -49,7 +55,7 @@ class RequestsList extends Component {
         return (
             <div>
                 {this.state.requests.map((request, index) => {
-                    return <RequestsListItem {...request} key={index} />
+                    return <RequestsListItem {...request} key={request._id} />
                 })}
             </div>
         );

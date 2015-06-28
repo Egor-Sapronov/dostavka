@@ -1,6 +1,7 @@
 'use strict';
 
 import AppServerActionCreators from '../actions/AppServerActionsCreators.js';
+import RequestsActionsCreators from '../actions/RequestsActionsCreators.js';
 
 const urls = {
     requests: '/api/requests'
@@ -46,6 +47,19 @@ export function putRequest(request, places) {
         .then(json)
         .then(function (result) {
             return AppServerActionCreators.receiveUpdatedRequest(result);
+        });
+}
+
+export function deleteRequest(id) {
+    return fetch(urls.requests + '/' + id, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(status)
+        .then(function (result) {
+            RequestsActionsCreators.getRequests();
         });
 }
 

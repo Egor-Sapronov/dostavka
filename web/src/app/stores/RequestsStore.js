@@ -25,6 +25,10 @@ class PlacesStore extends EventEmitter {
                     this.request = action.request;
                     this.emitChange();
                     break;
+                case ActionTypes.SET_STATUS:
+                    this.request.status = action.status;
+                    this.emitChange();
+                    break;
                 default:
             }
         });

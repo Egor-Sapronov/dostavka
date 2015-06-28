@@ -13,6 +13,8 @@ export default {
         GET_REQUEST: null,
         RECEIVE_REQUEST: null,
         RECEIVE_UPDATED_REQUEST: null,
-        PUT_REQUEST: null
+        PUT_REQUEST: null,
+        DELETE_REQUEST: null,
+        SET_STATUS: null
     })
 }

@@ -11,5 +11,11 @@ export default {
         });
 
         getRequests();
+    },
+    setStatus: function (status) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.SET_STATUS,
+            status: status
+        });
     }
 }

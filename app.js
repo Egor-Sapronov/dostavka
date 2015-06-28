@@ -47,6 +47,17 @@ app.get('/api/requests/:id', function (req, res) {
         });
 });
 
+app.delete('/api/requests/:id', function (req, res) {
+    return db
+        .RequestModel
+        .find({_id: req.params.id})
+        .remove()
+        .exec()
+        .then(function () {
+            res.status(200).send({});
+        });
+});
+
 app.put('/api/requests/:id', function (req, res) {
     return db
         .RequestModel

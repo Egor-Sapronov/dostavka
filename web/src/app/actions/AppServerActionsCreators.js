@@ -1,7 +1,6 @@
 import AppDispatcher from '../AppDispatcher.js';
 import AppConstants from '../constants/AppConstants.js';
-import {putRequest} from '../utils/webApiUtils.js';
-
+import {putRequest, deleteRequest} from '../utils/webApiUtils.js';
 
 let ActionTypes = AppConstants.ActionTypes;
 
@@ -32,5 +31,14 @@ export default {
             type: ActionTypes.RECEIVE_UPDATED_REQUEST,
             request: request
         });
+
+        location.href = '/requests';
+    },
+    deleteRequest: function (id) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.DELETE_REQUEST,
+            id: id
+        });
+        deleteRequest(id);
     }
 }
