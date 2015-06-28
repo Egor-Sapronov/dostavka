@@ -16,7 +16,7 @@ class PlacesStore extends EventEmitter {
         super();
 
         this.places = Immutable.List();
-
+        this.count = 0;
         this.dispatchToken = AppDispatcher.register((action)=> {
             switch (action.type) {
                 case ActionTypes.CREATE_PLACE:
@@ -36,6 +36,15 @@ class PlacesStore extends EventEmitter {
                         .then((result)=> {
                             console.log(result);
                         });
+                    break;
+                case ActionTypes.RECEIVE_REQUEST:
+                    this.places = Immutable.List(action.request.places.map(function (item) {
+                        this.count += 1;
+                        item.reactId = this.count;
+                        return item;
+                    }.bind(this)));
+                    this.emitChange();
+                    break;
                 default:
             }
         });
@@ -46,6 +55,8 @@ class PlacesStore extends EventEmitter {
     }
 
     addPlace(place) {
+        this.count += 1;
+        place.reactId = this.count;
         this.places = this.places.push(place);
     }
 
@@ -54,7 +65,7 @@ class PlacesStore extends EventEmitter {
     }
 
     deletePlace(placeId) {
-        this.places = this.places.remove(placeId);
+        this.places = this.places.delete(placeId);
     }
 
     emitChange() {

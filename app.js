@@ -21,6 +21,10 @@ app.get('/requests', function (req, res) {
     res.render('requests');
 });
 
+app.get('/requests/:id', function (req, res) {
+    res.render('editRequest');
+});
+
 app.get('/api/requests', function (req, res) {
     return db
         .RequestModel
@@ -28,6 +32,18 @@ app.get('/api/requests', function (req, res) {
         .exec()
         .then(function (result) {
             res.status(200).send(result);
+        });
+});
+
+app.get('/api/requests/:id', function (req, res) {
+    return db
+        .RequestModel
+        .findOne({
+            _id: req.params.id
+        })
+        .exec()
+        .then(function (item) {
+            res.status(200).send(item);
         });
 });
 

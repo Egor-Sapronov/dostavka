@@ -1,5 +1,7 @@
 import AppDispatcher from '../AppDispatcher.js';
 import AppConstants from '../constants/AppConstants.js';
+import {getRequest} from '../utils/webApiUtils.js';
+
 
 let ActionTypes = AppConstants.ActionTypes;
 
@@ -22,6 +24,14 @@ export default {
             type: ActionTypes.DELETE_PLACE,
             placeId: placeId
         });
+    },
+    getRequest: function (id) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.GET_REQUEST,
+            id: id
+        });
+
+        getRequest(id);
     },
     postRequest: function (data) {
         AppDispatcher.dispatch({

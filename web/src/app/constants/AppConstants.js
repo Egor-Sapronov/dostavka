@@ -9,6 +9,8 @@ export default {
         DELETE_PLACE: null,
         POST_REQUEST: null,
         GET_REQUESTS: null,
-        RECEIVE_REQUESTS: null
+        RECEIVE_REQUESTS: null,
+        GET_REQUEST: null,
+        RECEIVE_REQUEST: null
     })
 }

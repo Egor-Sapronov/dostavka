@@ -7,13 +7,13 @@ import InputField from './InputField.jsx';
 class PlaceListItem extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            place: this.props.place || null,
-            name: this.props.name || null,
-            phone: this.props.phone || null,
-            comment: this.props.comment || null,
-            placeIndex: this.props.placeId
+            place: this.props.place || '',
+            name: this.props.name || '',
+            phone: this.props.phone || '',
+            comment: this.props.comment || '',
+            placeIndex: this.props.placeId,
+            reactId: this.props.reactId
         };
     }
 

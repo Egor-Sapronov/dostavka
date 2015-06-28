@@ -8,7 +8,8 @@ module.exports = {
     context: path.join(__dirname, 'web/src'),
     entry: {
         index: './index',
-        requests: './requests'
+        requests: './requests',
+        edit: './edit'
     },
     output: {
         path: path.join(__dirname, 'web/dist'),

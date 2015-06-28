@@ -24,11 +24,12 @@ class PlacesList extends Component {
     }
 
     render() {
+        console.log(this.state.places);
         return (
             <div>
                 <h1>{this.state.price + ' Руб'}</h1>
                 {this.state.places.map((place, index) => {
-                    return <PlaceListItem {...place} placeId={index} key={index} />
+                    return <PlaceListItem {...place} placeId={index} key={place.reactId} />
                 })}
             </div>
         );

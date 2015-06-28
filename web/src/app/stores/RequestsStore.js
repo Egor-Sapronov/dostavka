@@ -21,9 +21,17 @@ class PlacesStore extends EventEmitter {
                     this.requests = Immutable.List(action.requests);
                     this.emitChange();
                     break;
+                case ActionTypes.RECEIVE_REQUEST:
+                    this.request = action.request;
+                    this.emitChange();
+                    break;
                 default:
             }
         });
+    }
+
+    getRequest() {
+        return this.request;
     }
 
     getRequests() {

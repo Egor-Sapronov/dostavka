@@ -18,6 +18,21 @@ function json(response) {
     return response.json();
 }
 
+export function getRequest(id) {
+    return fetch(urls.requests + '/' + id, {
+        method: 'GET',
+        headers: {
+            'accept': 'application/json',
+            'contentType': 'application/json'
+        }
+    })
+        .then(status)
+        .then(json)
+        .then(function (result) {
+            AppServerActionCreators.receiveRequest(result);
+        });
+}
+
 export function getRequests() {
     return fetch(urls.requests, {
         method: 'GET',

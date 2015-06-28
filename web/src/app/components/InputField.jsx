@@ -7,7 +7,7 @@ class InputField extends Component {
         super(props);
 
         this.state = {
-            value: this.props.value || null
+            value: this.props.value || ''
         };
     }
 

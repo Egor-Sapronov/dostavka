@@ -9,5 +9,11 @@ export default {
             type: ActionTypes.RECEIVE_REQUESTS,
             requests: requests
         });
+    },
+    receiveRequest: function (request) {
+        AppDispatcher.dispatch({
+            type: ActionTypes.RECEIVE_REQUEST,
+            request: request
+        });
     }
 }

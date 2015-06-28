@@ -3,9 +3,8 @@ import '../../bower_components/bootstrap/dist/js/bootstrap.js';
 import 'fetch';
 import PlacesActionCreators from './app/actions/PlacesActionCreators.js';
 require('./css/main.styl');
-import {display} from './app/components/app.jsx';
+import {display} from './app/components/edit.jsx';
 
-PlacesActionCreators.createPlace({});
-PlacesActionCreators.createPlace({});
+PlacesActionCreators.getRequest(location.href.split('/')[location.href.split('/').length - 1]);
 
 display(document.body);
