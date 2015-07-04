@@ -13,6 +13,23 @@ db.on('error', function (err) {
 
 db.once('open', function () {
   console.log('connected to db');
+  var user = new UserModel({
+    username: 'egor',
+    password: '123456'
+  });
+  var user2 = new UserModel({
+    username: 'artem',
+    password: '123456'
+  });
+
+  UserModel.remove(function () {
+    user
+      .save(function (err, user) {
+      });
+    user2
+      .save(function (err, user) {
+      });
+  });
 });
 
 module.exports = {

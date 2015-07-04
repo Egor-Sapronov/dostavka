@@ -3,10 +3,12 @@ html.no-js
     head
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        block title
+        title login
         meta(name='description', content='')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(rel='stylesheet', href='/static/index.css')
     body
-
-        block main
+      form(action='/login', method='post')
+        input#username(name='username', placeholder='username')
+        input#password(name='password', placeholder='password')
+        input(type='submit', value='Submit')
