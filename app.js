@@ -28,8 +28,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', function (req, res) {
+app.get('/request', function (req, res) {
   res.render('index');
+});
+
+app.get('/', function (req, res) {
+  res.render('home');
 });
 
 app.get('/login', function (req, res) {

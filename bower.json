@@ -21,6 +21,8 @@
     "fetch": "~0.9.0",
     "immutable": "~3.7.4",
     "flux": "~2.0.2",
-    "eventemitter3": "~1.1.1"
+    "eventemitter3": "~1.1.1",
+    "materialize": "~0.97.0",
+    "hammerjs": "~2.0.4"
   }
 }

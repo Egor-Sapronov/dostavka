@@ -1,0 +1,93 @@
+doctype
+html.no-js
+    head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      title Dostavka
+      meta(name='description', content='')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      link(rel='stylesheet', href='/static/landing.css')
+      link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    body
+      .navbar-fixed
+        nav.default-primary-color
+          .nav-wrapper
+            .container
+              a.brand-logo(href='/') Dostavka
+              
+              ul.right.hide-on-med-and-down
+                li
+                  a(href='#features') Преимущества
+                li
+                  a(href='#buy') Выкуп
+                li
+                  a(href='/request').btn.waves-effect.waves-light.accent-color
+                    span.dark-grey-text Оформить доставку
+                  
+      section.light-primary-color.section-wrapper.valign-wrapper
+        .row
+          .col.s12.center-align
+            h1.valign.primary-text-color Экспресс доставка
+            h6.secondary-text-color Курьерская доставка день в день
+            a(href='/request').btn.waves-effect.waves-light.accent-color
+              span.dark-grey-text Оформить доставку
+      
+    
+      section.white-text.dark-primary-color#features
+        h2.center-align Преимущества экспресс доставки
+        br
+        br
+        .container
+          .row
+            .col.s12.m4
+              .icon-block
+                h2.center
+                  i.material-icons.large query_builder
+                  h5.center 3 часа
+                  p.light.center Среднее время доставки. По нашей статистике клиент, получивший желанную покупку через пару часов в 6 раз чаще говорит об этом друзьям и знакомым.
+            .col.s12.m4
+              .icon-block
+                h2.center
+                  i.material-icons.large attach_money
+                  h5.center 150 рублей
+                  p.light.center Стоимость одного адреса в маршруте. Мы поможем сэкономить! Нам не важно сколько заказов вы делаете — раз в год или 1000 заказов — в месяц. Условия неизменны. Вы важны для нас независимо от количества заказов.
+            .col.s12.m4
+              .icon-block
+                h2.center
+                  i.material-icons.large timer_off
+                  h5.center 1 минута
+                  p.light.center Время заполнения заявки на сайте. В течение 1-2 часов курьер будет у Вас. В любое время суток. Без бюрократии и выматывающих звонков диспетчеру. Просто заполните форму заказа!       
+      
+      section.default-primary-color#about
+        .container.white-text
+          .text-wrapper
+            h2.center Курьер в аренду это удобно
+            br
+            p.flow-text Можно заказать курьера без регистрации и без договора. Достаточно лишь указать телефон на каждом из адресов. 
+            p.flow-text Телефон курьера отправим отправителю и получателям на каждом из адресов по SMS. Вам больше не нужно звонить на каждый адрес со словами: «А запишите телефон курьера!» 
+
+      section.dark-primary-color#buy
+        .container.white-text
+          .text-wrapper
+            h2.center Выкуп товара курьером
+            br
+            p.flow-text Курьер приезжает на склад интернет-магазина (или на склад к поставщику). Покупает за свои деньги (до 10 000 руб) товар. Доставляет его клиенту и возвращает свои деньги.      
+          .text-wrapper
+            h4 В чем преимущество выкупа?
+            ul
+              li
+                p.flow-text - не нужно оформлять материальную ответственность за 0,9%
+              li
+                p.flow-text - не нужно оформлять расписку
+              li
+                p.flow-text - деньги получаем сразу
+              li
+                p.flow-text - легко инкассировать выручку
+        br        
+        .valign-wrapper
+          .row
+            .col.s12.center-align
+              a(href='/request').btn.waves-effect.waves-light.accent-color
+                span.dark-grey-text Оформить доставку
+          
+      script(src='/static/landing.js')

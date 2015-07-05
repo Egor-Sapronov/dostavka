@@ -10,12 +10,6 @@ class Header extends Component {
                     <div className="navbar-header">
                         <a href="/" className="navbar-brand">Dostavka</a>
                     </div>
-                    <ul className="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="/requests">Все запросы</a>
-                        </li>
-
-                    </ul>
                 </div>
             </nav>
         );
