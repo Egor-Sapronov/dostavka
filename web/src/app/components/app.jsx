@@ -13,8 +13,10 @@ class App extends Component {
                 <Header />
                 <div className='container'>
                     <PlacesList />
-                    <button className='btn btn-primary' onClick={this.handleAdd.bind(this)} >Add</button>
-                    <button className='btn btn-success' onClick={this.handleSubmit.bind(this)} >Submit</button>
+                    <div className='btn-group'>
+                      <button className='btn btn-default' onClick={this.handleAdd.bind(this)}>Добавить адрес</button>
+                      <button className='btn btn-primary' onClick={this.handleSubmit.bind(this)}>Создать заявку</button>
+                    </div>
                 </div>
             </div>
         );

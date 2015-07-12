@@ -20,6 +20,8 @@ class RequestsListItem extends Component {
                         <li className='list-group-item'>{'Адрес: ' + place.place}</li>
                         <li className='list-group-item'>{'Контактное лицо: ' + place.name}</li>
                         <li className='list-group-item'>{'Телефон: ' + place.phone}</li>
+                        <li className='list-group-item'>{'Дата: ' + place.date}</li>
+                        <li className='list-group-item'>{'Время: ' + place.time}</li>
                         <li className='list-group-item'>{'Комментарий: ' + place.comment}</li>
                     </ul>
                 })}

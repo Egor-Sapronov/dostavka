@@ -24,7 +24,6 @@ class PlacesList extends Component {
     }
 
     render() {
-        console.log(this.state.places);
         return (
             <div>
                 <h1>{this.state.price + ' Руб'}</h1>

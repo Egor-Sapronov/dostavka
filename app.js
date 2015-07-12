@@ -69,11 +69,11 @@ app.get('/requests',
     res.render('requests');
   });
 
-app.get('/requests/:id', passport.authenticate('bearer', {
-  session: false
-}), function (req, res) {
-  res.render('editRequest');
-});
+app.get('/requests/:id',
+  ensureAuthenticated,
+  function (req, res) {
+    res.render('editRequest');
+  });
 
 app.get('/api/requests',
   passport.authenticate('bearer', {
@@ -103,42 +103,52 @@ app.get('/api/requests/:id', passport.authenticate('bearer', {
     });
 });
 
-app.delete('/api/requests/:id', passport.authenticate('bearer', {
-  session: false
-}), function (req, res) {
-  return db
-    .RequestModel
-    .find({
-      _id: req.params.id
-    })
-    .remove()
-    .exec()
-    .then(function () {
-      res.status(200).send({});
-    });
-});
+app.post('/api/requests',
+  function (req, res) {
+    var request = new db.RequestModel(req.body);
+    request
+      .save(function (err, result) {
+        res.status(201).send(result);
+      });
+  });
 
-app.put('/api/requests/:id', passport.authenticate('bearer', {
-  session: false
-}), function (req, res) {
-  return db
-    .RequestModel
-    .update({
-      _id: req.params.id
-    }, req.body, {})
-    .exec()
-    .then(function (result) {
-      res.status(200).send(result);
-    });
-});
+app.post('/api/requests/:id',
+  passport.authenticate('bearer', {
+    session: false
+  }),
+  function (req, res) {
+    return db
+      .RequestModel
+      .findOne({
+        _id: req.params.id
+      })
+      .exec()
+      .then(function (request) {
+        request.status = req.body.status;
+        request.places = req.body.places;
 
-app.post('/api/requests', function (req, res) {
-  var request = new db.RequestModel(req.body);
-  request
-    .save(function (err, result) {
-      res.status(201).send(result);
-    });
-});
+        return request.save(function (err, result) {
+          res.status(200).send(result);
+        });
+      });
+  });
+
+app.delete('/api/requests/:id',
+  passport.authenticate('bearer', {
+    session: false
+  }),
+  function (req, res) {
+    return db
+      .RequestModel
+      .find({
+        _id: req.params.id
+      })
+      .remove()
+      .exec()
+      .then(function () {
+        res.status(200).send({});
+      });
+  });
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {

@@ -12,7 +12,9 @@ var Request = new Schema({
     place: String,
     name: String,
     phone: String,
-    comment: String
+    comment: String,
+    date: String,
+    time: String
   }]
 });
 

@@ -10,7 +10,7 @@ const urls = {
 function getHeaders() {
   return {
     'accept': 'application/json',
-    'contentType': 'application/json',
+    'Content-Type': 'application/json',
     'Authorization': 'bearer ' + localStorage.getItem('token')
   };
 }
@@ -42,7 +42,7 @@ export function getRequest(id) {
 export function putRequest(request, places) {
   request.places = places;
   return fetch(urls.requests + '/' + request._id, {
-      method: 'PUT',
+      method: 'POST',
       headers: getHeaders(),
       body: JSON.stringify(request)
     })
