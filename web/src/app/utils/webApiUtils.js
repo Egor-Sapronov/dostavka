@@ -64,8 +64,8 @@ export function deleteRequest(id) {
     });
 }
 
-export function getRequests() {
-  return fetch(urls.requests, {
+export function getRequests(options) {
+  return fetch(urls.requests + (options.order ? '?order='+options.order : ''), {
       method: 'GET',
       headers: getHeaders()
     })

@@ -5,12 +5,13 @@ import {getRequests} from '../utils/webApiUtils.js';
 let ActionTypes = AppConstants.ActionTypes;
 
 export default {
-    getRequests: function () {
+    getRequests: function (options) {
         AppDispatcher.dispatch({
-            type: ActionTypes.GET_REQUESTS
+            type: ActionTypes.GET_REQUESTS,
+            options: options ? options : {}
         });
 
-        getRequests();
+        getRequests(options ? options : {});
     },
     setStatus: function (status) {
         AppDispatcher.dispatch({
@@ -18,4 +19,4 @@ export default {
             status: status
         });
     }
-}
+};

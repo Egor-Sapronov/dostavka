@@ -21,8 +21,6 @@ module.exports = (function () {
     };
 
     transporter.sendMail(mailOptions,function(err, info){
-      console.log(err);
-      console.log(info);
       console.log('New order message sent');
     });
   }

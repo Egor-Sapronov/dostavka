@@ -83,7 +83,9 @@ app.get('/api/requests',
   function (req, res) {
     return db
       .RequestModel
-      .find()
+      .find(req.query.order ? {
+        orderId: req.query.order
+      } : null)
       .exec()
       .then(function (result) {
         res.status(200).send(result);

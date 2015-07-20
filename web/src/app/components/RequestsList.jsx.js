@@ -14,16 +14,16 @@ class RequestsListItem extends Component {
         return (
             <li className='list-group-item'>
                 <span className='badge'>{this.props.status}</span>
-                <h4 className='list-group-item-heading'>{this.props._id}</h4>
+                <h4 className='list-group-item-heading'>{this.props.orderId}</h4>
                 {this.props.places.map(function (place, index) {
                     return <ul className='list-group' key={index}>
-                        <li className='list-group-item'>{'Адрес: ' + place.place}</li>
-                        <li className='list-group-item'>{'Контактное лицо: ' + place.name}</li>
-                        <li className='list-group-item'>{'Телефон: ' + place.phone}</li>
-                        <li className='list-group-item'>{'Дата: ' + place.date}</li>
-                        <li className='list-group-item'>{'Время: ' + place.time}</li>
-                        <li className='list-group-item'>{'Комментарий: ' + place.comment}</li>
-                    </ul>
+                            <li className='list-group-item'>{'Адрес: ' + place.place}</li>
+                            <li className='list-group-item'>{'Контактное лицо: ' + place.name}</li>
+                            <li className='list-group-item'>{'Телефон: ' + place.phone}</li>
+                            <li className='list-group-item'>{'Дата: ' + place.date}</li>
+                            <li className='list-group-item'>{'Время: ' + place.time}</li>
+                            <li className='list-group-item'>{'Комментарий: ' + place.comment}</li>
+                            </ul>
                 })}
                 <a href={'/requests/' + this.props._id}>Редактировать </a>
                 <a href='javascript:void(0)' onClick={this.handleDeleteClick.bind(this)}>Удалить</a>
