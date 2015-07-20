@@ -8,6 +8,7 @@ var bodyparser = require('body-parser');
 var db = require('./libs/database/database');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var notification = require('./libs/notification');
 var crypto = require('crypto');
 
 app.use('/static', express.static('./web/dist'));
@@ -105,9 +106,11 @@ app.get('/api/requests/:id', passport.authenticate('bearer', {
 
 app.post('/api/requests',
   function (req, res) {
+    console.log(db.RequestModel);
     var request = new db.RequestModel(req.body);
     request
       .save(function (err, result) {
+        notification.notificateByEmail('Новый заказ, номер: ' + result.orderId);
         res.status(201).send(result);
       });
   });

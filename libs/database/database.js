@@ -3,7 +3,17 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/dostavka');
 var db = mongoose.connection;
-var RequestModel = mongoose.model('Request', require('./models/request'));
+var autoIncrement = require('mongoose-auto-increment');
+var RequestSchema = require('./models/request');
+autoIncrement.initialize(db);
+RequestSchema.plugin(autoIncrement.plugin, {
+  model: 'Request',
+  field: 'orderId',
+  startAt: 1000,
+  incrementBy: 23
+});
+
+var RequestModel = mongoose.model('Request', RequestSchema);
 var UserModel = mongoose.model('User', require('./models/user'));
 var AccessTokenModel = mongoose.model('AccessToken', require('./models/token'));
 
@@ -24,11 +34,9 @@ db.once('open', function () {
 
   UserModel.remove(function () {
     user
-      .save(function (err, user) {
-      });
+      .save(function (err, user) {});
     user2
-      .save(function (err, user) {
-      });
+      .save(function (err, user) {});
   });
 });
 
