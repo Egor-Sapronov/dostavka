@@ -1,0 +1,56 @@
+doctype
+html.no-js
+    head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      title Dostavka
+      meta(name='description', content='')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      link(rel='stylesheet', href='/static/landing.css')
+      link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+    body.light-primary-color
+      .navbar-fixed
+        nav.default-primary-color
+          .nav-wrapper
+              a.brand-logo(href='/') Доставляйка
+              a.right.button-collapse(data-activates='slide-out', href='javascript:void(0)')
+                i.mdi-navigation-menu
+              ul.right.hide-on-med-and-down
+                li
+                  a(href='/request').btn.waves-effect.waves-light.accent-color
+                    span.dark-grey-text Оформить доставку
+              .container
+                ul.right.hide-on-med-and-down
+                  li
+                    a(href='#pay') Оплата
+                  li
+                    a(href='#shop') Магазину
+                  li
+                    a(href='#buy') Выкуп товара
+                  li
+                    a(href='tel:8-961-874-44-95', style='font-size:18pt') 8-961-874-44-95
+              ul.side-nav#slide-out      
+                li
+                  a(href='#pay') Оплата
+                li
+                  a(href='#shop') Магазину
+                li
+                  a(href='#buy') Выкуп товара
+                li
+                  a(href='/request').btn.waves-effect.waves-light.accent-color
+                    span.dark-grey-text Оформить доставку  
+                li
+                  a(href='tel:8-961-874-44-95', style='font-size:18pt') 8-961-874-44-95
+        
+      section.light-primary-color.section-wrapper.valign-wrapper
+                    .row
+                      .col.s12.center-align
+                        h1.valign.primary-text-color
+                          | Номер вашего заказа 
+                          strong #{order}
+                        h6
+                          | Скоро с вами свяжется курьер, ответим на все ваши вопросы по телефону 
+                          a(href='tel:8-961-874-44-95') 8-961-874-44-95
+                        a(href='/request').btn.waves-effect.waves-light.accent-color
+                          span.dark-grey-text Оформить доставку
+      script(src='/static/landing.js')        

@@ -34,7 +34,7 @@ class PlacesStore extends EventEmitter {
                 case ActionTypes.POST_REQUEST:
                     postRequest(action.data)
                         .then((result)=> {
-                            
+                            location.href='/info?order='+result.orderId;
                         });
                     break;
                 case ActionTypes.RECEIVE_REQUEST:

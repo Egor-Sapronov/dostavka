@@ -33,6 +33,10 @@ app.get('/request', function (req, res) {
   res.render('index');
 });
 
+app.get('/info', function(req,res){
+  res.render('info', {order: req.query.order});
+});
+
 app.get('/', function (req, res) {
   res.render('home');
 });
@@ -108,7 +112,6 @@ app.get('/api/requests/:id', passport.authenticate('bearer', {
 
 app.post('/api/requests',
   function (req, res) {
-    console.log(db.RequestModel);
     var request = new db.RequestModel(req.body);
     request
       .save(function (err, result) {
