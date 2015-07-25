@@ -13,4 +13,4 @@ if (token) {
 
 RequestsActionsCreators.getRequests();
 
-display(document.body);
+display(document.getElementById('content'));

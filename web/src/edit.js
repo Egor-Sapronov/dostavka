@@ -7,4 +7,5 @@ import {display} from './app/components/edit.jsx';
 
 PlacesActionCreators.getRequest(location.href.split('/')[location.href.split('/').length - 1]);
 
-display(document.body);
+display(document.getElementById('content'));
+

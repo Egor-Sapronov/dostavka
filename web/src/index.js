@@ -8,4 +8,4 @@ import {display} from './app/components/app.jsx';
 PlacesActionCreators.createPlace({});
 PlacesActionCreators.createPlace({});
 
-display(document.body);
+display(document.getElementById('content'));
