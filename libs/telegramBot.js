@@ -31,7 +31,7 @@ module.exports = (function () {
 	};
 
 	function notify(options) {
-		return fetch(urls.telegram + 'sendmessage?chat_id' + options.chat_id + '&text=' + options.text, {
+		return fetch(urls.telegram + 'sendmessage?chat_id=' + options.chat_id + '&text=' + options.text, {
 			method: 'POST',
 			headers: {
 				'accept': 'application/json',
