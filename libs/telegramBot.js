@@ -51,7 +51,14 @@ module.exports = (function () {
 	}
 
 	function setWebHook() {
-		return fetch(urls.telegram + 'setwebhook?url=http://dostavka.today/bot', headers)
+		return fetch(urls.telegram + 'setwebhook', {
+			method: 'POST',
+			headers: {
+				accept: 'applications/json',
+				contentType: 'application/json'
+			},
+			body: JSON.stringify({ url: 'http://dostavka.today/bot'})
+		})
 			.then(status)
 			.then(json)
 			.then(function (result) {
