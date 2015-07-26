@@ -34,17 +34,21 @@ module.exports = (function () {
 		return fetch(urls.telegram + 'sendmessage?chat_id' + options.chat_id + '&text=' + options.text, {
 			method: 'POST',
 			headers: {
-				accept: 'application/json',
-				contentType: 'application/json'
+				'accept': 'application/json',
+				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-
+				chat_id: options.chat_id,
+				text: options.text
 			})
 		})
 			.then(status)
 			.then(json)
 			.then(function (result) {
 				console.log(result);
+			})
+			.catch(function (err) {
+				console.log(err);
 			});
 	}
 
