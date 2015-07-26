@@ -51,7 +51,7 @@ module.exports = (function () {
 	}
 
 	function setWebHook() {
-		return fetch(urls.telegram + 'setwebhook?url=https://188.166.99.92/bot', headers)
+		return fetch(urls.telegram + 'setwebhook?url=http://dostavka.today/bot', headers)
 			.then(status)
 			.then(json)
 			.then(function (result) {
