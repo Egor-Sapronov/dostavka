@@ -8,3 +8,7 @@ app.listen(process.env.PORT || 3000, function () {
 	
 	bot.setWebHook();
 });
+
+app.listen(443, function(){
+	console.log('443 ok');
+});
