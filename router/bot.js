@@ -14,6 +14,9 @@ router.post('/', function (req, res) {
           chatId: data.chat.id
         }, function (err, result) {
 
+          console.log(err);
+          console.log(result);
+
           if (!result) {
             var subscriber = new db.SubscriberModel({
               chatId: data.chat.id,
@@ -22,6 +25,7 @@ router.post('/', function (req, res) {
             });
 
             subscriber.save(function (err, savedSubscriber) {
+              console.log(err);
               console.log('new subscriber: ' + savedSubscriber.first_name);
             });
           }
