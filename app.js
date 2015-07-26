@@ -119,7 +119,10 @@ app.post('/api/requests',
     var request = new db.RequestModel(req.body);
     request
       .save(function (err, result) {
-        db.SubscriberModel
+        
+        res.status(201).send(result);
+        
+        return db.SubscriberModel
           .find()
           .exec()
           .then(function (subscribers) {
@@ -130,8 +133,6 @@ app.post('/api/requests',
           .catch(function(err){
             console.log(err);
           });
-
-        res.status(201).send(result);
       });
   });
 
