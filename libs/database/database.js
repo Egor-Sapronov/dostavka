@@ -13,6 +13,7 @@ RequestSchema.plugin(autoIncrement.plugin, {
   incrementBy: 23
 });
 
+var SubscriberModel = mongoose.model('Subscriber', require('./models/subscriber'));
 var RequestModel = mongoose.model('Request', RequestSchema);
 var UserModel = mongoose.model('User', require('./models/user'));
 var AccessTokenModel = mongoose.model('AccessToken', require('./models/token'));
@@ -34,9 +35,9 @@ db.once('open', function () {
 
   UserModel.remove(function () {
     user
-      .save(function (err, user) {});
+      .save(function (err, user) { });
     user2
-      .save(function (err, user) {});
+      .save(function (err, user) { });
   });
 });
 

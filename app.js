@@ -11,6 +11,7 @@ var session = require('express-session');
 var notification = require('./libs/notification');
 var crypto = require('crypto');
 var bot = require('./libs/telegramBot');
+var botRouter = require('./router/bot');
 
 app.use('/static', express.static('./web/dist'));
 app.set('view engine', 'jade');
@@ -30,11 +31,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.post('/bot', function (req, res) {
-  console.log('hook');
-  console.log(req.body);
-  res.send();
-});
+app.use('/bot', botRouter);
 
 app.get('/request', function (req, res) {
   res.render('index');
