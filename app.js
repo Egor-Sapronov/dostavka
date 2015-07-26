@@ -31,6 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.post('/bot', function (req, res) {
+  console.log('sfsdf');
   console.log(req.body);
   res.send();
 });
