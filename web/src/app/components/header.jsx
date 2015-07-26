@@ -8,7 +8,7 @@ class Header extends Component {
             <nav className="navbar navbar-default navbar-static-top">
                 <div className="container">
                     <div className="navbar-header">
-                        <a href="/" className="navbar-brand">Dostavka</a>
+                        <a href="/" className="navbar-brand">Доставка</a>
                     </div>
                 </div>
             </nav>

@@ -62,20 +62,21 @@ module.exports = {
         test: /\.styl$/,
         loader: 'style-loader!css-loader!stylus-loader'
       }
-        ]
+    ]
   },
   plugins: [
-        new webpack.ProvidePlugin({
+    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
-        new ExtractTextPlugin("[name].css"),
-        new BowerWebpackPlugin({
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin("[name].css"),
+    new BowerWebpackPlugin({
       modulesDirectories: ['bower_components'],
       manifestFiles: ['bower.json', '.bower.json'],
       includes: /.*/,
       excludes: /.*\.less$/
     })
-    ]
+  ]
 };
