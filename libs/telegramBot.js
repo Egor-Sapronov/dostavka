@@ -30,17 +30,6 @@ module.exports = (function () {
 		telegram: 'https://api.telegram.org/bot121819846:AAGs0yWBVbPXTsEZwICeTFrD3RaDK8PlekY/'
 	};
 
-	function getUpdates() {
-		return fetch(urls.telegram + 'getupdates', headers.get)
-			.then(status)
-			.then(json)
-			.then(function (result) {
-				result.result.forEach(function (item) {
-					console.log(item);
-				});
-			});
-	}
-
 	function notifyContacts(message) {
 		return fetch(urls.telegram + 'getme', headers.get)
 			.then(status)
@@ -70,7 +59,6 @@ module.exports = (function () {
 
 	return {
 		notifyContacts: notifyContacts,
-		getUpdates: getUpdates,
 		setWebHook: setWebHook
 	};
 })()
