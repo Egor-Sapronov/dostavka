@@ -119,9 +119,6 @@ app.post('/api/requests',
     var request = new db.RequestModel(req.body);
     request
       .save(function (err, result) {
-
-        notification.notificateByEmail('Новый заказ, номер: ' + result.orderId);
-
         db.SubscriberModel
           .find()
           .exec()
