@@ -46,5 +46,6 @@ module.exports = {
   mongoose: mongoose,
   RequestModel: RequestModel,
   UserModel: UserModel,
-  AccessTokenModel: AccessTokenModel
+  AccessTokenModel: AccessTokenModel,
+  SubscriberModel: SubscriberModel
 };
