@@ -36,11 +36,7 @@ module.exports = (function () {
 			headers: {
 				'accept': 'application/json',
 				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				chat_id: options.chat_id,
-				text: options.text
-			})
+			}
 		})
 			.then(status)
 			.then(json)
