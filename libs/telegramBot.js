@@ -30,8 +30,17 @@ module.exports = (function () {
 		telegram: 'https://api.telegram.org/bot121819846:AAGs0yWBVbPXTsEZwICeTFrD3RaDK8PlekY/'
 	};
 
-	function notifyContacts(message) {
-		return fetch(urls.telegram + 'getme', headers.get)
+	function notify(options) {
+		return fetch(urls.telegram + 'sendmessage?chat_id' + options.chat_id + '&text=' + options.text, {
+			method: 'POST',
+			headers: {
+				accept: 'application/json',
+				contentType: 'application/json'
+			},
+			body: JSON.stringify({
+
+			})
+		})
 			.then(status)
 			.then(json)
 			.then(function (result) {
@@ -58,7 +67,7 @@ module.exports = (function () {
 	}
 
 	return {
-		notifyContacts: notifyContacts,
+		notify: notify,
 		setWebHook: setWebHook
 	};
 })()

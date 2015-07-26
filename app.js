@@ -119,9 +119,20 @@ app.post('/api/requests',
     var request = new db.RequestModel(req.body);
     request
       .save(function (err, result) {
+
         notification.notificateByEmail('Новый заказ, номер: ' + result.orderId);
 
-        bot.notifyContacts('message');
+        db.SubscriberModel
+          .find()
+          .exec()
+          .then(function (subscribers) {
+            subscribers.forEach(function (subscriber) {
+              bot.notify({ chat_id: subscriber.chatId, text: 'Новый заказ, номер: ' + result.orderId });
+            });
+          })
+          .catch(function(err){
+            console.log(err);
+          });
 
         res.status(201).send(result);
       });
