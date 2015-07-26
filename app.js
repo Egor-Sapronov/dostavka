@@ -10,6 +10,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var notification = require('./libs/notification');
 var crypto = require('crypto');
+var bot = require('./libs/telegramBot');
 
 app.use('/static', express.static('./web/dist'));
 app.set('view engine', 'jade');
@@ -29,12 +30,17 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.post('/bot', function (req, res) {
+  console.log(req.body);
+  res.send();
+});
+
 app.get('/request', function (req, res) {
   res.render('index');
 });
 
-app.get('/info', function(req,res){
-  res.render('info', {order: req.query.order});
+app.get('/info', function (req, res) {
+  res.render('info', { order: req.query.order });
 });
 
 app.get('/', function (req, res) {
@@ -116,6 +122,9 @@ app.post('/api/requests',
     request
       .save(function (err, result) {
         notification.notificateByEmail('Новый заказ, номер: ' + result.orderId);
+
+        bot.notifyContacts('message');
+
         res.status(201).send(result);
       });
   });
