@@ -10,12 +10,9 @@ router.post('/', function (req, res) {
     var data = req.body.message;
     switch (data.text) {
       case '/subscribe':
-        db.SubscriberModel.find({
+        db.SubscriberModel.findOne({
           chatId: data.chat.id
         }, function (err, result) {
-
-          console.log(err);
-          console.log(result);
 
           if (!result) {
             var subscriber = new db.SubscriberModel({
@@ -25,7 +22,6 @@ router.post('/', function (req, res) {
             });
 
             subscriber.save(function (err, savedSubscriber) {
-              console.log(err);
               console.log('new subscriber: ' + savedSubscriber.first_name);
             });
           }
