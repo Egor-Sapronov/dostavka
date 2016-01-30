@@ -1,7 +1,6 @@
-.DS_Store
-node_modules
-npm-debug.log
-.DS_Store
 .nyc_output
+.DS_Store
+npm-debug.log
 static
+node_modules
 .env

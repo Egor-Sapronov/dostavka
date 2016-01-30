@@ -7,7 +7,7 @@ const webpack = require('webpack');
 module.exports = {
     devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
     entry: {
-        client: isProd ? ['./src/index'] : ['webpack-hot-middleware/client', './src/index'],
+        client: isProd ? ['./src/index.prod'] : ['webpack-hot-middleware/client', './src/index.dev'],
     },
     output: {
         path: `${__dirname}/static`,
@@ -24,6 +24,8 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                'CATALOG_API_KEY': JSON.stringify(process.env.CATALOG_API_KEY),
+                'CATALOG_API_HOST': JSON.stringify(process.env.CATALOG_API_HOST),
             },
         }),
         !isProd ? new webpack.HotModuleReplacementPlugin() : new webpack.optimize.OccurenceOrderPlugin(),
@@ -41,7 +43,7 @@ module.exports = {
             test: /\.(jpg|png|jpeg|git|ico|woff|svg|woff2|eot)$/,
             loader: 'file-loader',
         }, {
-            test: /\.js?/,
+            test: /\.js$/,
             loaders: ['babel'],
             include: path.join(__dirname, 'src'),
         }],
