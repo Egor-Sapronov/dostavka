@@ -23,6 +23,7 @@ module.exports = {
         new ExtractTextPlugin(isProd ? '[hash].[name].css' : '[name].css'),
         new webpack.DefinePlugin({
             'process.env': {
+                'DEVTOOLS': JSON.stringify(process.env.DEVTOOLS),
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
                 'CATALOG_API_KEY': JSON.stringify(process.env.CATALOG_API_KEY),
                 'CATALOG_API_HOST': JSON.stringify(process.env.CATALOG_API_HOST),

@@ -13,7 +13,7 @@ render(
         <Provider store={ store }>
             <div>
                 <Root />
-                <DevTools />
+                { process.env.DEVTOOLS ? <DevTools /> : null}
             </div>
         </Provider>
     </div>,

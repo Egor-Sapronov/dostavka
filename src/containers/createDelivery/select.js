@@ -1,10 +1,11 @@
 import { createSelector } from 'reselect';
-import { path } from 'ramda';
+import { path, keys, compose } from 'ramda';
 
-export const getItems = path(['address', 'items']);
+export const getAddresses = compose(keys, path(['address']));
 
-export default createSelector(getItems, (items) => {
-    return {
-        items,
-    };
-});
+export default createSelector(
+    getAddresses, (items) => {
+        return {
+            items,
+        };
+    });

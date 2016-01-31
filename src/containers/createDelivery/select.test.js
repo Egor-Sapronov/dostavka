@@ -1,15 +1,16 @@
 import test from 'ava';
 import 'babel-register';
-import { getItems } from './select';
+import { getAddresses } from './select';
 
-test('getItems', t => {
-    const actual = getItems({
+test('getAddresses', t => {
+    const actual = getAddresses({
         address: {
-            items: [{item: 1}],
+            key1: {},
+            key2: {},
         },
     });
 
-    const expected = [{item: 1}];
+    const expected = ['key1', 'key2'];
 
     t.same(actual, expected);
 });
