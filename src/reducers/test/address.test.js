@@ -2,6 +2,7 @@ import test from 'ava';
 import 'babel-register';
 import { RECEIVE_SEARCH, ADD_ADDRESS, SELECT_ADDRESS } from '../../actions/address';
 import reducer from '../address';
+import { Map, List, fromJS } from 'immutable';
 
 test('RECEIVE_SEARCH', t => {
     const action = {
@@ -9,7 +10,7 @@ test('RECEIVE_SEARCH', t => {
         uuid: 'key',
         result: [1, 2, 3],
     };
-    const actual = reducer({}, action);
+    const actual = reducer(Map(), action).toJS();
 
     const expected = {
         key: {
@@ -26,7 +27,7 @@ test('ADD_ADDRESS', t => {
         uuid: 'key',
     };
 
-    const actual = reducer({}, action);
+    const actual = reducer(Map(), action).toJS();
     const expected = {
         key: {},
     };
@@ -42,12 +43,12 @@ test('SELECT_ADDRESS', t => {
             name: 'lenina',
         },
     };
-    const state = {
+    const state = fromJS({
         key: {
-            items: [1, 2, 3],
+            items: List([1, 2, 3]),
         },
-    };
-    const actual = reducer(state, action);
+    });
+    const actual = reducer(state, action).toJS();
 
     const expected = {
         key: {

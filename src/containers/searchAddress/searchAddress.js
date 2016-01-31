@@ -10,7 +10,7 @@ class SearchAddress extends Component {
         onChange: PropTypes.func.isRequired,
         onSelect: PropTypes.func.isRequired,
         uuid: PropTypes.string.isRequired,
-        items: PropTypes.array,
+        items: PropTypes.array.isRequired,
     };
 
     constructor(props) {
