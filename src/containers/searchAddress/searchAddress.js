@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { path, partial, _ } from 'ramda';
+import { path, partial } from 'ramda';
 import select from './select';
 import Autocomplete from 'react-autocomplete';
 
