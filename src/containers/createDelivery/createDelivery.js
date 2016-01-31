@@ -8,7 +8,7 @@ import uuid from 'node-uuid';
 class CreateDelivery extends Component {
     static propTypes = {
         dispatch: PropTypes.func.isRequired,
-        items: PropTypes.array.isRequired,
+        items: PropTypes.object.isRequired,
     };
 
     constructor(props) {
