@@ -1,82 +1,52 @@
-'use strict';
+const isProd = process.env.NODE_ENV === 'production';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
 
-var path = require('path');
-var BowerWebpackPlugin = require('bower-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var webpack = require('webpack');
 module.exports = {
-  context: path.join(__dirname, 'web/src'),
-  entry: {
-    index: './index',
-    requests: './requests',
-    edit: './edit',
-    landing: './landing'
-  },
-  output: {
-    path: path.join(__dirname, 'web/dist'),
-    filename: '[name].js'
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-      },
-      {
-        test: /\.png$/,
-        loader: "url-loader?limit=100000"
-      },
-      {
-        test: /\.jpg$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.woff2$/,
-        loader: "url?limit=10000&minetype=application/font-woff2"
-      },
-      {
-        test: /\.woff$/,
-        loader: "url?limit=10000&minetype=application/font-woff"
-      },
-      {
-        test: /\.ttf$/,
-        loader: "url?limit=10000&minetype=application/octet-stream"
-      },
-      {
-        test: /\.eot$/,
-        loader: "file"
-      },
-      {
-        test: /\.svg$/,
-        loader: "url?limit=10000&minetype=image/svg+xml"
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'
-      }
-    ]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin("[name].css"),
-    new BowerWebpackPlugin({
-      modulesDirectories: ['bower_components'],
-      manifestFiles: ['bower.json', '.bower.json'],
-      includes: /.*/,
-      excludes: /.*\.less$/
-    })
-  ]
+    devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
+    entry: {
+        client: isProd ? ['./src/index.prod'] : ['webpack-hot-middleware/client', './src/index.dev'],
+    },
+    output: {
+        path: `${__dirname}/static`,
+        filename: isProd ? '[hash].[name].js' : '[name].js',
+        publicPath: '/static/',
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            chunks: ['client'],
+            template: './src/html/index.html',
+            inject: 'body',
+        }),
+        new ExtractTextPlugin(isProd ? '[hash].[name].css' : '[name].css'),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'DEVTOOLS': JSON.stringify(process.env.DEVTOOLS),
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+                'CATALOG_API_KEY': JSON.stringify(process.env.CATALOG_API_KEY),
+                'CATALOG_API_HOST': JSON.stringify(process.env.CATALOG_API_HOST),
+            },
+        }),
+        !isProd ? new webpack.HotModuleReplacementPlugin() : new webpack.optimize.OccurenceOrderPlugin(),
+        !isProd ? new webpack.NoErrorsPlugin() : new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false,
+            },
+        }),
+    ],
+    module: {
+        loaders: [{
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+        }, {
+            test: /\.(jpg|png|jpeg|git|ico|woff|svg|woff2|eot)$/,
+            loader: 'file-loader',
+        }, {
+            test: /\.js$/,
+            loaders: ['babel'],
+            include: path.join(__dirname, 'src'),
+        }],
+    },
 };

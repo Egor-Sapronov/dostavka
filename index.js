@@ -1,9 +1,32 @@
-'use strict';
+const isProd = process.env.NODE_ENV === 'production';
+const express = require('express');
+const webpack = require('webpack');
+const config = require('./webpack.config');
+const bodyParser = require('body-parser');
+const app = express();
+const compiler = webpack(config);
 
-var app = require('./app');
-var bot = require('./libs/telegramBot');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.listen(process.env.PORT || 3000, function () {
-	console.log('ok');
-	bot.setWebHook();
+if (isProd) {
+    app.use('/static', express.static(config.output.path));
+} else {
+    app.use(require('webpack-dev-middleware')(compiler, {
+        noInfo: true,
+        publicPath: config.output.publicPath,
+    }));
+
+    app.use(require('webpack-hot-middleware')(compiler));
+}
+
+app.get('/', (req, res) => res.sendFile(`${config.output.path}/index.html`));
+
+app.listen(process.env.PORT, (err) => {
+    if (err) {
+        console.log(err); //eslint-disable-line
+        return;
+    }
+
+    console.log(`Listening on ${process.env.PORT}`); //eslint-disable-line
 });

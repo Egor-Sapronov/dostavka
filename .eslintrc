@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "indent": [2, 4, {
+      "SwitchCase": 1
+    }]
+  }
+}
