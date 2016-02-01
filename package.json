@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "dostavka",
     "scripts": {
-        "start": "node devServer.js",
+        "start": "node index.js",
         "postinstall": "webpack",
         "test": "npm run test:client",
         "test:client": "nyc ava -v src/**/*.test.js",
