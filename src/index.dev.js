@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import Root from './containers/root/root';
 import configureStore from './store/configureStore';
 import DevTools from './containers/devTools';
+import './styles/default.css';
 
 const store = configureStore();
 

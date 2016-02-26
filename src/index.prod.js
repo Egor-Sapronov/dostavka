@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import Root from './containers/root/root';
 import configureStore from './store/configureStore';
+import './styles/default.css';
 
 const store = configureStore();
 

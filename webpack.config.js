@@ -31,7 +31,7 @@ module.exports = {
                 'DEVTOOLS': JSON.stringify(process.env.DEVTOOLS),
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
                 'CATALOG_API_KEY': JSON.stringify(process.env.CATALOG_API_KEY),
-                'CATALOG_API_HOST': JSON.stringify(process.env.CATALOG_API_HOST),
+                'CATALOG_API_HOST': JSON.stringify(process.env.CATALOG_API_HOST)
             },
         }),
         !isProd ? new webpack.HotModuleReplacementPlugin() : new webpack.optimize.OccurenceOrderPlugin(),

@@ -1,0 +1,31 @@
+.wrap {
+    width: 270px;
+    position: absolute 0 0 * *;
+    }
+
+.title {
+    min-height: 70px;
+    width: 100%;
+    color: #fff #85b327;
+    padding-left: 30px;
+    font: 20px/70px Helvetica, sans-serif;
+    text-transform: uppercase;
+    }
+
+.category {
+    list-style: none;
+    width: 100%;
+    min-height: 55px;
+    color: #ababab #f8f8f8;
+    cursor: pointer;
+    padding-left: 30px;
+    font: 15px/70px Helvetica, sans-serif;
+
+    &:hover, &.active {
+        color: #30353c;
+        }
+    }
+
+.category:nth-child(odd) {
+    background: #f1f1f1;
+    }
