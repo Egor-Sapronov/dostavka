@@ -20,7 +20,7 @@ if (isProd) {
     app.use(require('webpack-hot-middleware')(compiler));
 }
 
-app.get('/', (req, res) => res.sendFile(`${config.output.path}/index.html`));
+app.get('*', (req, res) => res.sendFile(`${config.output.path}/index.html`));
 
 app.listen(process.env.PORT, (err) => {
     if (err) {

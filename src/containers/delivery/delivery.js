@@ -5,7 +5,7 @@ import SearchAddress from '../searchAddress/searchAddress';
 import { addAddress, requestSearch, selectAddress } from '../../actions/address';
 import uuid from 'node-uuid';
 
-class CreateDelivery extends Component {
+class Delivery extends Component {
     static propTypes = {
         dispatch: PropTypes.func.isRequired,
         items: PropTypes.object.isRequired,
@@ -35,6 +35,7 @@ class CreateDelivery extends Component {
         const { items } = this.props;
         return (
             <div>
+                <h2>Delivery</h2>
                 { items.map(item => <SearchAddress
                     key={ item }
                     uuid={ item }
@@ -47,4 +48,4 @@ class CreateDelivery extends Component {
     }
 }
 
-export default connect(select)(CreateDelivery);
+export default connect(select)(Delivery);
