@@ -1,0 +1,26 @@
+.wrap {
+    float: right;
+    position: relative;
+    size: 136px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #94c82c inline('./assets/cart.svg') center no-repeat;
+    background-size: 50px;
+
+    &:hover {
+        background: #85b327 inline('./assets/cart.svg') center no-repeat;
+        background-size: 50px;
+        }
+    }
+
+.counter {
+    color: #fff #30353c;
+    position: absolute 0 1px * *;
+    size: 40px;
+    text-align: center;
+    border-radius: 50%;
+    font: 14px/40px Helvetica, sans-serif;
+    }
+
+

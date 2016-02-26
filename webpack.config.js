@@ -3,6 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const assets = require('postcss-assets');
+const modulesLocalByDefault = require('postcss-modules-local-by-default');
+const cssShort = require('postcss-short');
+const nested = require('postcss-nested');
 
 module.exports = {
     devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
@@ -39,14 +44,24 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?localIdentName=[name]__[local]!postcss-loader'),
+            exclude: /node_modules/
         }, {
             test: /\.(jpg|png|jpeg|git|ico|woff|svg|woff2|eot)$/,
-            loader: 'file-loader',
+            loader: 'file-loader'
         }, {
             test: /\.js$/,
             loaders: ['babel'],
-            include: path.join(__dirname, 'src'),
+            include: path.join(__dirname, 'src')
         }],
     },
+    postcss() {
+    return [
+        assets(),
+        modulesLocalByDefault,
+        nested,
+        autoprefixer,
+        cssShort()
+    ];
+}
 };
