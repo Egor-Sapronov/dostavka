@@ -1,4 +1,8 @@
 .wrap {
+    background: url('assets/bg.png') center 100%;
+    }
+
+.content {
     position: relative;
     margin: auto;
     size: 1170px 415px;
@@ -13,7 +17,6 @@
     cursor: pointer;
     display: inline-block;
     margin-right: 40px;
-
     }
 
 .link:hover {
@@ -79,6 +82,7 @@
     color: #30353c;
     transition: color 0.1s;
     vertical-align: middle;
+    font: 14px/16px Helvetica, sans-serif;
     }
 
 .auth_icon {
