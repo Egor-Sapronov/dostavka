@@ -1,17 +1,19 @@
 .wrap {
     float: right;
-    position: relative;
+    position: absolute 145px 0 * *;
     size: 136px;
     color: #fff;
     border-radius: 50%;
     cursor: pointer;
     background: #94c82c inline('./assets/cart.svg') center no-repeat;
     background-size: 50px;
+    transition: background 0.1s;
 
     &:hover {
         background: #85b327 inline('./assets/cart.svg') center no-repeat;
         background-size: 50px;
         }
+
     }
 
 .counter {
