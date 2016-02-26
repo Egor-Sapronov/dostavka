@@ -1,0 +1,94 @@
+.wrap {
+    position: relative;
+    margin: auto;
+    size: 1170px 415px;
+    background: url('assets/logo.png') center no-repeat;
+    padding-top: 145px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+
+    }
+
+.link {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 40px;
+
+    }
+
+.link:hover {
+    .lk_icon {
+        background: #525b66 inline('./assets/auth.svg') center no-repeat;
+        background-size: 20px;
+        }
+
+    .auth_icon {
+        background: #85b327 inline('./assets/vk.svg') center no-repeat;
+        background-size: 20px;
+        }
+
+    .cont_text {
+        color: #94c82c;
+        }
+    }
+
+.contacts {
+    margin-bottom: 25px;
+    }
+
+.icon_call {
+    vertical-align: middle;
+    display: inline-block;
+    size: 60px;
+    border-radius: 50%;
+    background: #94c82c inline('./assets/phone.svg') center no-repeat;
+    background-size: 25px;
+
+    }
+
+.text_wrap {
+    vertical-align: middle;
+    display: inline-block;
+    color: #94c82c;
+    font: 15px/18px Helvetica, sans-serif;
+    padding-left: 25px;
+    }
+
+.text {
+    margin: 0;
+    }
+
+.tell {
+    margin: 0;
+    color: #30353c;
+    font: 30px/32px Helvetica, sans-serif;
+    }
+
+.lk_icon {
+    vertical-align: middle;
+    display: inline-block;
+    size: 40px;
+    border-radius: 50%;
+    background: #30353c inline('./assets/auth.svg') center no-repeat;
+    background-size: 20px;
+    margin-right: 15px;
+    transition: background 0.1s;
+    }
+
+.cont_text {
+    color: #30353c;
+    transition: color 0.1s;
+    vertical-align: middle;
+    }
+
+.auth_icon {
+    vertical-align: middle;
+    display: inline-block;
+    size: 40px;
+    border-radius: 50%;
+    background: #94c82c inline('./assets/vk.svg') center no-repeat;
+    background-size: 20px;
+    margin-right: 15px;
+    transition: background 0.1s;
+    }
+
