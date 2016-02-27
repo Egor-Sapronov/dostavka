@@ -22,6 +22,7 @@
     cursor: pointer;
     padding: * 30px;
     font: 15px/70px Helvetica, sans-serif;
+    transition: color 0.3s;
 
     &:hover, &.active {
         color: #30353c;

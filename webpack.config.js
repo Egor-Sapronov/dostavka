@@ -47,7 +47,7 @@ module.exports = {
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader?localIdentName=[name]__[local]!postcss-loader'),
             exclude: /node_modules/
         }, {
-            test: /\.(jpg|png|jpeg|git|ico|woff|svg|woff2|eot)$/,
+            test: /\.(jpg|png|jpeg|git|ico|woff|svg|woff2|eot|otf)$/,
             loader: 'file-loader'
         }, {
             test: /\.js$/,
