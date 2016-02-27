@@ -14,9 +14,9 @@ export function* loadRubrics() {
 
 export function* loadProducts() {
     while (true) { // eslint-disable-line no-constant-condition
-        yield take(REQUEST_PRODUCTS);
+        const { rubricId } = yield take(REQUEST_PRODUCTS);
 
-        const result = yield call(getProducts);
+        const result = yield call(getProducts, rubricId);
 
         yield put(receiveProducts(result));
     }

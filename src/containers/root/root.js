@@ -19,7 +19,10 @@ export class Root extends Component {
                 <Route path="/" component={ App }>
                     <IndexRoute onEnter={ () => getProducts() } component={ Content } />
                     <Route path="delivery" component={ Delivery } />
-                    <Route path="rubrics/:rubricId" onEnter={ () => getProducts() } component={ Content } />
+                    <Route
+                        path="rubrics/:rubricId"
+                        onEnter={ (nextState) => getProducts(nextState.params.rubricId) }
+                        component={ Content } />
                     <Route path="basket" component={ Basket } />
                 </Route>
             </Router>
