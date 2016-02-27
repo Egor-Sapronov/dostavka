@@ -7,7 +7,7 @@ export default ({ product }) => {
             <div alt="тут будет альт" className={ styles.photo } style={{background: `#fff url(${product.img}) center no-repeat` }}></div>
             <div className={ styles.info }>
                 <p className={ styles.name }>{product.title}</p>
-                 <span className={ styles.sum }>{product.price}<span className={ styles.rubl }>i</span></span>
+                <span className={ styles.sum }>{product.price}<span className={ styles.rubl }>i</span></span>
                 <div className={ styles.coll }>
                     <span className={ styles.coll_text }>кол-во: <span className={ styles.coll_count }>0 </span>шт.</span>
                 </div>
