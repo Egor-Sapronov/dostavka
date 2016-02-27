@@ -1,0 +1,58 @@
+.wrap {
+    min-size: 100% 65px;
+    min-width: 1170px;
+    border-bottom: solid 1px #85b327;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 30px *;
+    }
+
+.content {
+    width: 80%;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    color: #85b327;
+    font: 25px/65px Helvetica, sans-serif;
+    }
+
+.text {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    text-transform: uppercase;
+    margin-right: 10px;
+    }
+
+.sum {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    padding: 20px;
+    font-size: 50px;
+    vertical-align: baseline;
+    }
+
+.rubl {
+    font-size: 40px;
+    font-family: Rubl;
+    vertical-align: baseline;
+    }
+
+.goToOrder {
+    float: right;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    border-radius: 33px;
+    display: inline-block;
+    height: 65px;
+    padding: * 25px;
+    vertical-align: top;
+    border: solid 1px #85b327;
+    transition: color, background 0.5s;
+
+    &:hover {
+        border: 0;
+        color: #fff #85b327;
+        }
+    }

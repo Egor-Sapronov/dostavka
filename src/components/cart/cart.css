@@ -17,6 +17,8 @@
     }
 
 .counter {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     color: #fff #30353c;
     position: absolute -5px -5px * *;
     size: 50px;

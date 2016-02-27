@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Delivery from '../delivery/delivery';
 import App from '../app/app';
-import Basket from '../basket/basket';
+import Basket from '../../components/basket/basket';
 import Content from '../../components/content/content';
 
 
