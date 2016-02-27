@@ -9,6 +9,7 @@ import select from './select';
 export class Content extends Component {
     static propTypes = {
         requestRubrics: PropTypes.func.isRequired,
+        products: PropTypes.array,
         rubrics: PropTypes.array,
     };
 
@@ -17,11 +18,11 @@ export class Content extends Component {
     }
 
     render() {
-        const { rubrics } = this.props;
+        const { rubrics, products } = this.props;
         return (
             <div className={ styles.wrap }>
                 <Category rubrics={ rubrics } />
-                <CardsOfFood />
+                <CardsOfFood products={ products } />
             </div>
         );
     }

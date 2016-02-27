@@ -1,6 +1,6 @@
 import { take, put, call } from 'redux-saga';
-import { REQUEST_RUBRICS, receiveRubrics } from '../actions/api';
-import { getRubrics } from '../io/api';
+import { REQUEST_RUBRICS, REQUEST_PRODUCTS, receiveRubrics, receiveProducts } from '../actions/api';
+import { getRubrics, getProducts } from '../io/api';
 
 export function* loadRubrics() {
     while (true) { // eslint-disable-line no-constant-condition
@@ -12,4 +12,14 @@ export function* loadRubrics() {
     }
 }
 
-export default [loadRubrics];
+export function* loadProducts() {
+    while (true) { // eslint-disable-line no-constant-condition
+        yield take(REQUEST_PRODUCTS);
+
+        const result = yield call(getProducts);
+
+        yield put(receiveProducts(result));
+    }
+}
+
+export default [loadRubrics, loadProducts];

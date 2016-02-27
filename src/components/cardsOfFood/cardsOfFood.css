@@ -40,7 +40,6 @@
 
 .photo {
     size: 260px;
-    background: #fff inline('./assets/1.jpg') center no-repeat;
     background-size: 258px;
     transition: background-size 0.3s;
     }

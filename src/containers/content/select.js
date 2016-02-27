@@ -6,5 +6,6 @@ export default createSelector(
     (catalog) => {
         return {
             rubrics: catalog.get('rubrics').toArray(),
+            products: catalog.get('products').toArray(),
         };
     });
