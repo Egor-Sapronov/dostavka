@@ -1,24 +1,26 @@
 .wrap {
-    width: 270px;
-    position: absolute 0 0 * *;
+    width: 100%;
+    text-align: center;
     }
 
-.title {
-    min-height: 70px;
+.list {
+    padding: 0;
+    margin: 0;
     width: 100%;
-    color: #fff #85b327;
-    padding-left: 30px;
-    font: 20px/70px Helvetica, sans-serif;
-    text-transform: uppercase;
+    display: inline-block;
+    background: #f8f8f8;
+    border-bottom: solid 0.2px #f9f9f9;
     }
 
 .category {
+    display: inline-block;
     list-style: none;
-    width: 100%;
-    min-height: 55px;
+    width: auto;
+    height: 70px;
+    text-align: center;
     color: #ababab #f8f8f8;
     cursor: pointer;
-    padding-left: 30px;
+    padding: * 30px;
     font: 15px/70px Helvetica, sans-serif;
 
     &:hover, &.active {
