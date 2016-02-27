@@ -2,15 +2,6 @@
     min-width: 1170px;
     width: 100%;
     background: url('assets/bg.png') center 100%;
-
-    &:after {
-        content: '';
-        size: 100% 30px;
-        position: relative * 0 -30px;
-        display: block;
-        background: #94c82c;
-        margin-bottom: 30px;
-        }
     }
 
 .content {

@@ -3,21 +3,82 @@
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    overflow: hidden;
+    position: relative;
+    padding-top: 50px;
+    }
+
+.toggle {
+    z-index: 1;
+    position: absolute 0 * *;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    font: 24px/40px Helvetica, sans-serif;
+    background: #94c82c;
+    padding-top: 7px;
+    box-sizing: border-box;
+
+    &:hover {
+        & .arrowClose {
+             transform: rotate(360deg);
+             }
+        & .arrowOpen {
+              transform: rotate(540deg);
+             }
+        }
+
+    }
+
+.arrow {
+    size: 35px;
+    margin: auto;
+    background: inline('./assets/arrow.svg') center no-repeat;
+    background-size: 35px;
+    }
+
+.arrowClose {
+    composes: arrow;
+    transform: rotate(0);
+    transition: transform ease-in-out .5s;
+    }
+
+.arrowOpen {
+    composes: arrow;
+    transform: rotate(180deg);
+    transition: transform ease-in-out .5s;
     }
 
 .list {
+    overflow: hidden;
     padding: 0;
     margin: 0;
     width: 100%;
-    display: inline-block;
     background: #f8f8f8;
-    border-bottom: solid 0.2px #f9f9f9;
+    border-bottom: solid .2px #f9f9f9;
+    }
+
+.listOpen{
+    composes: list;
+    transition: all ease-in-out .5s;
+    }
+
+.listClose {
+    composes: list;
+    position: relative;
+    top: -421px;
+    margin-bottom: -421px;
+    transition: all ease-in-out .5s;
     }
 
 .category {
+    position: relative;
+    box-sizing: border-box;
     display: inline-block;
+    width: 400px;
     list-style: none;
-    width: auto;
     height: 70px;
     text-align: center;
     color: #ababab #f8f8f8;
@@ -25,12 +86,34 @@
     padding: * 30px;
     font: 18px/70px Helvetica, sans-serif;
     transition: color 0.3s;
-
-    &:hover, &.active {
-        color: #30353c;
-        }
     }
 
 .category:nth-child(odd) {
     background: #f1f1f1;
+    }
+
+.link {
+    display: inline-block;
+    text-decoration: none;
+    font: inherit;
+    color: #ababab;
+    size: 100%;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        size: 30px 100%;
+        position: absolute * * * 0px;
+        }
+
+    &:after {
+        content: '';
+        display: inline-block;
+        size: 30px 100%;
+        position: absolute * 0px * *;
+        }
+
+    &:hover, &.active {
+        color: #30353c;
+        }
     }
