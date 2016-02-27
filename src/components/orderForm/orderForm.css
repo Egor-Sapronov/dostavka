@@ -1,0 +1,138 @@
+.wrap {
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    min-width: 1170px;
+    height: 600px;
+    border-top: solid 20px #85b327;
+    }
+
+.content {
+    width: 600px;
+    min-height: 600px;
+    margin: auto;
+    padding: 50px 30px;
+    color: #30353c;
+    }
+
+.inputWrap {
+    font: 22px/36px Helvetica, sans-serif;
+    display: flex;
+    margin: 0 0 15px;
+    }
+
+.input {
+    font: 16px/36px Helvetica, sans-serif;
+    text-align: center;
+    flex: 1 0 auto;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #30353c;
+    outline: none;
+    &:active {
+        outline: none;
+        }
+
+    &::-moz-placeholder { 
+         color:#7d7d7d; 
+         }
+     
+    &:-webkit-autofill {
+         -webkit-box-shadow: 0 0 0px 1000px white inset;
+         }
+    }
+
+.forInput {
+    margin-right: 15px;
+    font: 22px/36px Helvetica, sans-serif;
+    }
+
+.dataInput, .timeInput {
+    flex: 1 0 auto;
+    display: inline-block;
+    float: right;
+    padding: * 10px;
+    font: 16px/36px Helvetica, sans-serif;
+    border: solid 1px #7d7d7d;
+    outline: none;
+    text-align: center;
+
+    &:active {
+        outline: none;
+        }
+    }
+
+.dataInput {
+    margin-right: 15px;
+    }
+
+.helpText {
+    font: 16px/18px Helvetica, sans-serif;
+    position: relative * * 10px 0;
+    color: #30353c;
+    }
+
+.laberForRadio {
+    vertical-align: middle;
+    cursor: pointer;
+    padding-left: 30px;
+    width: 100%;
+    display: block;
+    color: #30353c;
+    font: 16px/36px Helvetica, sans-serif;
+    }
+
+.radio {
+    display: none;
+
+    &:checked + .laberForRadio .newRadio {
+         box-shadow: 0 0 5px 2px #85b327;
+        background: #85b327;
+        }
+    }
+
+.laberForRadio:hover .newRadio {
+    box-shadow: 0 0 5px 2px #85b327;
+    background: #85b327;
+    }
+
+.newRadio {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    border-radius: 50%;
+    vertical-align:middle;
+    border: solid 1px #30353c;
+    cursor:pointer;
+    margin-right: 15px;
+    transition: background, box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 5px 2px #85b327;
+        background: #85b327;
+        }
+    }
+
+.goToOrder {
+    text-align: center;
+    width: 400px;
+    margin: 50px auto *;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    border-radius: 33px;
+    height: 65px;
+    padding: * 25px;
+    vertical-align: top;
+    border: solid 1px #85b327;
+    transition: color, background 0.5s;
+    color: #85b327;
+    font: 25px/65px Helvetica, sans-serif;
+
+&:hover {
+     border: 0;
+     color: #fff #85b327;
+     }
+    }
