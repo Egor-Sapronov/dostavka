@@ -107,6 +107,9 @@ export default () => {
                     </div>
                 </li>
             </ul>
+            <div className={ styles.more }>
+                <a className={ styles.moreLink } href="">Хочу больше продуктов...</a>
+            </div>
         </div>
     );
 };
