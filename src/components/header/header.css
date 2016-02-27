@@ -1,4 +1,6 @@
 .wrap {
+    min-width: 1170px;
+    width: 100%;
     background: url('assets/bg.png') center 100%;
 
     &:after {
@@ -16,7 +18,7 @@
     margin: auto;
     size: 1170px 415px;
     background: url('assets/logo.png') center no-repeat;
-    padding-top: 145px;
+    padding: 145px 20px 0;
     box-sizing: border-box;
     text-transform: uppercase;
     }
