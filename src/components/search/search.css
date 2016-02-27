@@ -1,9 +1,9 @@
 .wrap {
-    margin: auto;
+    margin: * auto 30px;
     width: 90%;
     height: 65px;
     border-radius: 33px;
-    background: #1f2227;
+    background: #f1f1f1;
     cursor: pointer;
     overflow: hidden;
     }
@@ -17,7 +17,7 @@
     padding: * 20px;
     outline: none;
     border: none;
-    color: #fff;
+    color: #30353c;
     text-align: left;
     background: none;
 

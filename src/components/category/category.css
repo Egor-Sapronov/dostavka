@@ -22,7 +22,7 @@
     color: #ababab #f8f8f8;
     cursor: pointer;
     padding: * 30px;
-    font: 15px/70px Helvetica, sans-serif;
+    font: 18px/70px Helvetica, sans-serif;
     transition: color 0.3s;
 
     &:hover, &.active {
