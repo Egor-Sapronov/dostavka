@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './header.css';
 import Cart from '../cart/cart';
+import Search from '../search/search';
 
 export default () => {
     return (
@@ -26,6 +27,7 @@ export default () => {
 
                 <Cart />
             </div>
+            <Search />
         </div>
     );
 };

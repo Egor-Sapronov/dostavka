@@ -1,7 +1,7 @@
 .wrap {
     float: right;
-    position: absolute 145px 20px * *;
-    size: 136px;
+    position: absolute 130px 100px * *;
+    size: 160px;
     color: #fff;
     border-radius: 50%;
     cursor: pointer;
@@ -18,11 +18,10 @@
 
 .counter {
     color: #fff #30353c;
-    position: absolute 0 1px * *;
-    size: 40px;
+    position: absolute -5px -5px * *;
+    size: 50px;
     text-align: center;
     border-radius: 50%;
-    font: 14px/40px Helvetica, sans-serif;
+    font: 16px/50px Helvetica, sans-serif;
     }
-
 

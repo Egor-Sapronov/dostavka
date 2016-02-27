@@ -1,0 +1,56 @@
+.wrap {
+    margin: auto;
+    width: 90%;
+    height: 65px;
+    border-radius: 33px;
+    background: #1f2227;
+    cursor: pointer;
+    overflow: hidden;
+    }
+
+.input {
+    box-sizing: border-box;
+    vertical-align: middle;
+    display: inline-block;
+    width: 95%;
+    font: 24px/65px Helvetica, sans-serif;
+    padding: * 20px;
+    outline: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    background: none;
+
+    &:hover, &:active {
+        outline: none;
+        }
+    }
+
+.input::-moz-placeholder { color:#7d7d7d; }
+
+.button {
+    vertical-align: middle;
+    display: inline-block;
+    border: none;
+    display: inline-block;
+    padding: 0;
+    cursor: pointer;
+    size: 5% 100%;
+    text-transform: uppercase;
+    text-align: center;
+    background: none, inline('assets/loupe.svg') no-repeat;
+    background-position: right;
+    background-size: 40px;
+    transition: background 0.2s;
+    transform: scale(1);
+
+    &:hover {
+        background: none, inline('assets/louper_hv.svg') no-repeat;
+        background-position: right;
+        background-size: 40px;
+        }
+
+    &:active {
+        transform: scale(0.8);
+        }
+    }
