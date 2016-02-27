@@ -3,9 +3,10 @@ export const RECEIVE_RUBRICS = 'RECEIVE_RUBRICS';
 export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 
-export function requestProducts() {
+export function requestProducts(rubricId) {
     return {
         type: REQUEST_PRODUCTS,
+        rubricId,
     };
 }
 

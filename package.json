@@ -64,6 +64,7 @@
     "react-router": "^2.0.0",
     "redux": "^3.1.5",
     "redux-logger": "^2.4.0",
+    "redux-router": "0.1.0",
     "redux-saga": "^0.5.0",
     "request": "2.69.0",
     "reselect": "^2.0.2",
