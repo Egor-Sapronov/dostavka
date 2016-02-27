@@ -1,15 +1,16 @@
 .wrap {
-    width: 100%;
-    overflow: hidden;
-    min-width: 1170px;
+    width: 1170px;
     margin: auto;
+    padding-top: 30px;
     }
 
 .list {
-    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 0;
     padding: 0;
-    width: 90%;
-    margin-right: -30px;
+    width: 100%;
     }
 
 .card {
@@ -17,9 +18,9 @@
     vertical-align: top;
     list-style: none;
     display: inline-block;
-    margin: 0 30px 30px *;
     width: 260px;
     min-height: 360px;
+    margin-bottom: 30px;
     background: #f8f8f8;
     box-shadow: 0 0 20px -9px #7f7f7f;
     transition: box-shadow 0.3s;
@@ -40,6 +41,8 @@
 
 .photo {
     size: 260px;
+
+
     background-size: 258px;
     transition: background-size 0.3s;
     }
@@ -51,8 +54,6 @@
     }
 
 .sum {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
     padding: 0;
     display: block;
     vertical-align: middle;
@@ -62,14 +63,10 @@
     }
 
 .rubl {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
     font-family: Rubl;
     }
 
 .name {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
     margin: 0 0 20px;
     color: #30353c;
     text-transform: uppercase;
@@ -77,8 +74,6 @@
     }
 
 .minus, .plus {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
     vertical-align: middle;
     display: inline-block;
     size: 50px;
@@ -109,39 +104,4 @@
 
 .control {
     position: absolute * 16px 18px *;
-    }
-
-.more {
-    text-align: center;
-    }
-
-.moreLink {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    display: inline-block;
-    height: 65px;
-    min-width: 600px;
-    border: solid 1px #94c82c;
-    border-radius: 33px;
-    padding: 0 10px;
-    font: 32px/65px Helvetica, sans-serif;
-    color: #94c82c;
-    text-decoration: none;
-    transition: all 0.3s;
-    margin-bottom: 50px;
-
-    &:hover {
-        color: #85b327;
-        border-color: #85b327;
-        }
-
-    &:active {
-        font-size: 30px;
-        }
-    }
-
-.coll_text {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    font: 14px/15px Helvetica, sans-serif;
     }
