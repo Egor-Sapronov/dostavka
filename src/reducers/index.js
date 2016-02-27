@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import address from './address';
 import catalog from './catalog';
+import basket from './catalog';
 
-export default combineReducers({address, catalog});
+export default combineReducers({address, catalog, basket});

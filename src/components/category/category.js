@@ -1,20 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import styles from './category.css';
 import { Link, IndexLink } from 'react-router';
 
 export default class Category extends Component {
+    static propTypes = {
+        rubrics: PropTypes.array,
+    };
+
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false
-        }
-        this.handelClick= this.handelClick.bind(this);
+            isOpen: false,
+        };
+        this.handelClick = this.handelClick.bind(this);
     }
 
     handelClick() {
         this.setState({
-            isOpen: !this.state.isOpen
-        })
+            isOpen: !this.state.isOpen,
+        });
     }
 
     render() {
@@ -29,7 +33,7 @@ export default class Category extends Component {
                     </li>
                     { this.props.rubrics.map(rubric => {
                         return (
-                            <li className={ styles.category }>
+                            <li key={ rubric._id } className={ styles.category }>
                                 <Link className={ styles.link } to={`/rubrics/${rubric._id}`} key={ rubric._id }>
                                     { rubric.title }
                                 </Link>
