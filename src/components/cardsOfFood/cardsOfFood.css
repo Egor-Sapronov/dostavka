@@ -1,14 +1,16 @@
 .wrap {
     width: 1170px;
     margin: auto;
+    padding-top: 30px;
     }
 
 .list {
-    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     margin: 0;
-    display: inline-block;
+    padding: 0;
     width: 100%;
-    padding: 30px -30px -30px *;
     }
 
 .card {
@@ -18,7 +20,7 @@
     display: inline-block;
     width: 260px;
     min-height: 360px;
-    margin: * 30px 30px *;
+    margin-bottom: 30px;
     background: #f8f8f8;
     box-shadow: 0 0 20px -9px #7f7f7f;
     transition: box-shadow 0.3s;
