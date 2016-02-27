@@ -5,7 +5,7 @@
     }
 
 .list {
-    margin: auto;
+    margin: * auto 50px;
     padding: 0;
     width: 90%;
     margin-right: -30px;
@@ -101,4 +101,31 @@
 
 .control {
     position: absolute * 16px 18px *;
+    }
+
+.more {
+    text-align: center;
+    }
+
+.moreLink {
+    display: inline-block;
+    height: 65px;
+    min-width: 600px;
+    border: solid 1px #94c82c;
+    border-radius: 33px;
+    padding: 0 10px;
+    font: 32px/65px Helvetica, sans-serif;
+    color: #94c82c;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-bottom: 50px;
+
+    &:hover {
+        color: #85b327;
+        border-color: #85b327;
+        }
+
+    &:active {
+        font-size: 30px;
+        }
     }
