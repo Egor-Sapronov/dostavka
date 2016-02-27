@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Delivery from '../delivery/delivery';
 import App from '../app/app';
-import Basket from '../../components/basket/basket';
+import Basket from '../basket/basket';
 import Content from '../content/content';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import { requestProducts } from '../../actions/api';

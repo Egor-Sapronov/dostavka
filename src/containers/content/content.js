@@ -5,6 +5,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { requestRubrics } from '../../actions/api';
 import select from './select';
+import Search from '../../components/search/search';
+
 
 export class Content extends Component {
     static propTypes = {
@@ -21,7 +23,10 @@ export class Content extends Component {
         const { rubrics, products } = this.props;
         return (
             <div className={ styles.wrap }>
+
                 <Category rubrics={ rubrics } />
+                <Search />
+
                 <CardsOfFood products={ products } />
             </div>
         );
