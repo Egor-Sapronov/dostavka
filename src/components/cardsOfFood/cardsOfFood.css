@@ -1,11 +1,12 @@
 .wrap {
+    width: 100%;
+    overflow: hidden;
     min-width: 1170px;
     margin: auto;
-    padding-top: 30px;
     }
 
 .list {
-    margin: * auto 50px;
+    margin: auto;
     padding: 0;
     width: 90%;
     margin-right: -30px;
@@ -51,6 +52,8 @@
     }
 
 .sum {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     padding: 0;
     display: block;
     vertical-align: middle;
@@ -60,10 +63,14 @@
     }
 
 .rubl {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     font-family: Rubl;
     }
 
 .name {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     margin: 0 0 20px;
     color: #30353c;
     text-transform: uppercase;
@@ -71,6 +78,8 @@
     }
 
 .minus, .plus {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     vertical-align: middle;
     display: inline-block;
     size: 50px;
@@ -108,6 +117,8 @@
     }
 
 .moreLink {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     display: inline-block;
     height: 65px;
     min-width: 600px;
@@ -128,4 +139,10 @@
     &:active {
         font-size: 30px;
         }
+    }
+
+.coll_text {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    font: 14px/15px Helvetica, sans-serif;
     }

@@ -68,6 +68,8 @@
     }
 
 .text {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     margin: 0;
     }
 
@@ -89,6 +91,8 @@
     }
 
 .cont_text {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     color: #30353c;
     transition: color 0.1s;
     vertical-align: middle;
