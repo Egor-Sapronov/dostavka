@@ -12,11 +12,12 @@
     }
 
 .card {
+    position: relative;
     vertical-align: top;
     list-style: none;
     display: inline-block;
     width: 260px;
-    min-height: 400px;
+    min-height: 360px;
     margin: * 30px 30px *;
     background: #f8f8f8;
     box-shadow: 0 0 20px -9px #7f7f7f;
@@ -51,7 +52,7 @@
 
 .sum {
     padding: 0;
-    display: inline-block;
+    display: block;
     vertical-align: middle;
     color: #94c82c;
     font: 25px/30px Helvetica, sans-serif;
@@ -63,6 +64,7 @@
     }
 
 .name {
+    margin: 0 0 20px;
     color: #30353c;
     text-transform: uppercase;
     transition: color 0.3s;
@@ -95,4 +97,8 @@
 
 .minus {
     margin-right: 15px;
+    }
+
+.control {
+    position: absolute * 16px 18px *;
     }
