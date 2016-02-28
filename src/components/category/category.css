@@ -86,10 +86,7 @@
     padding: * 30px;
     font: 18px/70px Helvetica, sans-serif;
     transition: color 0.3s;
-    }
-
-.category:nth-child(odd) {
-    background: #f1f1f1;
+    border: solid 1px #f1f1f1;
     }
 
 .link {
@@ -114,6 +111,18 @@
         }
 
     &:hover, &.active {
-        color: #30353c;
+        color: #30353c #f1f1f1;
+        &:before, &:after {
+            background: #f1f1f1;
+            }
+        }
+    }
+
+.linkActive {
+    composes: link;
+    color: #30353c #f1f1f1;
+
+    &:before, &:after {
+        background: #f1f1f1;
         }
     }

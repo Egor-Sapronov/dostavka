@@ -34,7 +34,7 @@ export default class Category extends Component {
                     { this.props.rubrics.map(rubric => {
                         return (
                             <li key={ rubric._id } className={ styles.category }>
-                                <Link className={ styles.link } to={`/rubrics/${rubric._id}`} key={ rubric._id }>
+                                <Link className={ styles.link } to={`/rubrics/${rubric._id}`} key={ rubric._id } activeClassName={ styles.linkActive }>
                                     { rubric.title }
                                 </Link>
                             </li>

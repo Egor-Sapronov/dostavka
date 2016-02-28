@@ -14,8 +14,8 @@ export default () => {
                     </div>
                 </div>
                 <div className={ styles.auth }>
-                        <span className={ styles.cont_text }>Доставка продуктов по г. Новосибирск</span>
-                        <p className={ styles.cont_text_min }><sup>*</sup>Этот проект создан на Hackathon Novosibirs от 2Gis</p>
+                    <span className={ styles.cont_text }>Доставка продуктов по г. Новосибирск</span>
+                    <p className={ styles.cont_text_min }><sup>*</sup>Этот проект создан на Hackathon Novosibirs от 2Gis</p>
                 </div>
                 <Cart />
             </div>
