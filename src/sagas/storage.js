@@ -1,4 +1,4 @@
-import { take, put, call } from 'redux-saga';
+import { take, put, call } from 'redux-saga/effects';
 import { add, removeId } from '../utils/localStorage';
 import { ADD_TO_BASKET, receiveFromBasket, REMOVE_FROM_BASKET } from '../actions/basket';
 
