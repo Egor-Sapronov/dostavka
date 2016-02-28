@@ -65,6 +65,7 @@
     }
 
 .tell {
+    text-decoration: none;
     margin: 0;
     color: #30353c;
     font: 30px/32px Helvetica, sans-serif;
@@ -87,7 +88,12 @@
     color: #30353c;
     transition: color 0.1s;
     vertical-align: middle;
-    font: 14px/16px Helvetica, sans-serif;
+    font: 16px/18px Helvetica, sans-serif;
+    }
+
+.cont_text_min {
+    composes: cont_text;
+    font-size: 12px;
     }
 
 .auth_icon {

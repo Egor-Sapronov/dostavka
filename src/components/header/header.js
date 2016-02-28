@@ -9,19 +9,13 @@ export default () => {
                 <div className={ styles.contacts }>
                     <div className={ styles.icon_call }></div>
                     <div className={ styles.text_wrap }>
-                        <p className={ styles.text }>звоните нам бесплатно:</p>
-                        <p className={ styles.tell }>8-913-777-66-55</p>
+                        <p className={ styles.text }>звоните нам:</p>
+                        <a className={ styles.tell } href="tel:+79039056206">8-903-905-62-06</a>
                     </div>
                 </div>
                 <div className={ styles.auth }>
-                    <a className={ styles.link }>
-                        <div className={ styles.lk_icon }></div>
-                        <span className={ styles.cont_text }>вход</span>
-                    </a>
-                    <a className={ styles.link }>
-                        <div className={ styles.auth_icon }></div>
-                        <span className={ styles.cont_text }>авторизация</span>
-                    </a>
+                        <span className={ styles.cont_text }>Доставка продуктов по г. Новосибирск</span>
+                        <p className={ styles.cont_text_min }><sup>*</sup>Этот проект создан на Hackathon Novosibirs от 2Gis</p>
                 </div>
                 <Cart />
             </div>
