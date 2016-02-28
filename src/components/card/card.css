@@ -50,6 +50,7 @@
     }
 
 .name {
+    font-family: Helvetica, sans-serif;
     margin: 0 0 20px;
     color: #30353c;
     text-transform: uppercase;
@@ -67,7 +68,7 @@
     transform: rotate(0deg);
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
-    font: 32px/45px Helvetica, sans-serif;
+    font: 32px/44px Helvetica, sans-serif;
 
 &:hover {
      background: #85b327;
