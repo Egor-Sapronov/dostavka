@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './card.css';
 
-export default ({ product, onAdd, onRemove }) => {
+export default ({ product, onAdd, onRemove, inBasket }) => {
     return (
         <li className={ styles.wrap }>
             <div alt="тут будет альт" className={ styles.photo } style={{background: `#fff url(${product.img}) center no-repeat`, backgroundSize: '258px' }}></div>
@@ -10,10 +10,10 @@ export default ({ product, onAdd, onRemove }) => {
                 <span className={ styles.sum }>{product.price}<span className={ styles.rubl }>i</span></span>
             </div>
             <div className={ styles.control }>
-                <div className={ styles.minus } onClick={ () => onRemove(product._id) }>−</div>
+                { product.inBasket > 0 ? <div className={ styles.minus } onClick={ () => onRemove(product._id) }>−</div> : null }
                 <div className={ styles.plus } onClick={ () => onAdd(product._id) }>+</div>
             </div>
-            <div className={ styles.coll }> 0 </div>
+            { product.inBasket > 0 ? <div className={ styles.coll }> { product.inBasket } </div> : null }
         </li>
     );
 };

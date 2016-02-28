@@ -1,5 +1,5 @@
 import { take, put, call } from 'redux-saga/effects';
-import { add, removeId } from '../utils/localStorage';
+import { add, removeId, getBusket } from '../utils/localStorage';
 import { ADD_TO_BASKET, receiveFromBasket, REMOVE_FROM_BASKET } from '../actions/basket';
 
 export function* addToBasket() {
@@ -13,6 +13,10 @@ export function* addToBasket() {
 }
 
 export function* removeFromBasket() {
+
+    const data = yield call(getBusket);
+    yield put(receiveFromBasket(data));
+
     while (true) { // eslint-disable-line no-constant-condition
         const {id} = yield take(REMOVE_FROM_BASKET);
 

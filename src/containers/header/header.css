@@ -21,19 +21,19 @@
     }
 
 .link:hover {
-    .lk_icon {
-        background: #525b66 inline('./assets/auth.svg') center no-repeat;
-        background-size: 20px;
-        }
+.lk_icon {
+    background: #525b66 inline('./assets/auth.svg') center no-repeat;
+    background-size: 20px;
+    }
 
-    .auth_icon {
-        background: #85b327 inline('./assets/vk.svg') center no-repeat;
-        background-size: 20px;
-        }
+.auth_icon {
+    background: #85b327 inline('./assets/vk.svg') center no-repeat;
+    background-size: 20px;
+    }
 
-    .cont_text {
-        color: #94c82c;
-        }
+.cont_text {
+    color: #94c82c;
+    }
     }
 
 .contacts {

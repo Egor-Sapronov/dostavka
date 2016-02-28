@@ -1,14 +1,16 @@
-import { RECIEVE_FROM_BASKET } from '../actions/basket';
-import { Map, List} from 'immutable';
+import { RECEIVE_FROM_BASKET } from '../actions/basket';
+import { Map, List } from 'immutable';
 
-const initialState = Map({
-    products: List(),
-});
+const initialState = {
+    productsInBasket: [],
+};
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case RECIEVE_FROM_BASKET:
-            return state.set('products', action.result);
+        case RECEIVE_FROM_BASKET:
+            return {
+                productsInBasket: action.result
+            };
         default:
             return state;
     }

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Header from '../../components/header/header';
+import Header from '../header/header';
 
 export default class App extends Component {
     static propTypes = {
@@ -17,3 +17,4 @@ export default class App extends Component {
         );
     }
 }
+

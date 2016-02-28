@@ -23,9 +23,14 @@ export const removeId = (id) => {
         const basketData = JSON.parse(basket);
         const basketWithoutId = remove(findIndex(isSame(id), basketData), 1, basketData);
         localStorage.setItem(basketKey, JSON.stringify([...basketWithoutId]));
+        return JSON.parse(localStorage.getItem(basketKey));
     }
 
     return [];
 };
 
+export const getBusket = () => {
+    const data = localStorage.getItem(basketKey);
 
+    return data ? JSON.parse(data) : [];
+};
