@@ -6,13 +6,16 @@ export default () => {
         <div className={ styles.wrap } id="createOrder">
             <div className={ styles.content }>
                 <div className={ styles.inputWrap }>
-                    <input className={ styles.input } type="text" id="name" placeholder="Пушкарская Дарья.."></input>
+                    <input className={ styles.input } type="text" id="name" placeholder="Пушкарская Дарья ..."></input>
                 </div>
                 <div className={ styles.inputWrap }>
-                    <input className={ styles.input } type="tel" id="tel" placeholder="8-913-..."></input>
+                    <input className={ styles.input } type="tel" id="tel" placeholder="8-913- ..."></input>
                 </div>
                 <div className={ styles.inputWrap }>
                     <input className={ styles.input } type="text" id="email" placeholder="email@2Gis.ru"></input>
+                </div>
+                <div className={ styles.inputWrap }>
+                    <input className={ styles.input } type="text" id="adress" placeholder="Горская 9а, кв 46"></input>
                 </div>
                 <div className={ styles.inputWrap }>
                     <div className={ styles.forInput }>Дата и время доставки: </div>

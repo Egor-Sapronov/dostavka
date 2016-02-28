@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Delivery from '../delivery/delivery';
 import App from '../app/app';
 import Basket from '../basket/basket';
+import Order from '../order/order';
 import Content from '../content/content';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import { requestProducts } from '../../actions/api';
@@ -18,12 +18,12 @@ export class Root extends Component {
             <Router history={ browserHistory }>
                 <Route path="/" component={ App }>
                     <IndexRoute onEnter={ () => getProducts() } component={ Content } />
-                    <Route path="delivery" component={ Delivery } />
                     <Route
                         path="rubrics/:rubricId"
                         onEnter={ (nextState) => getProducts(nextState.params.rubricId) }
                         component={ Content } />
                     <Route path="basket" component={ Basket } />
+                    <Route path="order" component={ Order } />
                 </Route>
             </Router>
         );

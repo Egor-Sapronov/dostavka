@@ -23,7 +23,7 @@
 
 .input {
     font: 16px/36px Helvetica, sans-serif;
-    text-align: center;
+    text-align: left;
     flex: 1 0 auto;
     background: transparent;
     border: 0;
@@ -33,10 +33,10 @@
         outline: none;
         }
 
-    &::-moz-placeholder { 
-         color:#7d7d7d; 
+    &::-moz-placeholder {
+         color:#7d7d7d;
          }
-     
+
     &:-webkit-autofill {
          -webkit-box-shadow: 0 0 0px 1000px white inset;
          }

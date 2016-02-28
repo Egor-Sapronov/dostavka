@@ -1,0 +1,44 @@
+.wrap {
+    min-width: 1170px;
+    min-height: 600px;
+    width: 100%;
+    background: url('assets/bg_black.png') center 100%;
+    border-top: solid 30px #85b327;
+    margin: 0;
+    }
+
+.content {
+    min-width: 960px;
+    max-width: 1170px;
+    margin: auto;
+    color: #fff;
+    font: 18px/22px Helvetica, sans-serif;
+    font-weight: 200;
+    }
+
+.title {
+    text-align: center;
+    }
+
+.list {
+    list-style: none;
+    }
+
+.headerList {
+    width: 250px;
+    border-bottom: solid 1px #fff;
+    margin-bottom: 15px;
+    }
+
+.item {
+    margin-bottom: 15px;
+    }
+
+.product, .price, .articl {
+    display: inline-block;
+    width: 33%;
+    }
+
+.rubl {
+    font-family: Rubl;
+    }
