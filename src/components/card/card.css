@@ -1,4 +1,5 @@
-.card {
+.wrap {
+    position: relative;
     -webkit-user-select: none;
     -khtml-user-select: none;
     position: relative;
@@ -33,7 +34,7 @@
 .info {
     width: 100%;
     box-sizing: border-box;
-    padding: 25px;
+    padding: 25px 25px 50px;
     }
 
 .sum {
@@ -88,4 +89,19 @@
 
 .control {
     position: absolute * 16px 18px *;
+    }
+
+.coll {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    vertical-align: middle;
+    display: inline-block;
+    size: 50px;
+    color: #fff #cfd2d6;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    font: 24px/49px Helvetica, sans-serif;
+    position: absolute -15px -15px * *;
     }

@@ -9,7 +9,7 @@ export default () => {
                 <div className={ styles.contacts }>
                     <div className={ styles.icon_call }></div>
                     <div className={ styles.text_wrap }>
-                        <p className={ styles.text }>звоните нам:</p>
+                        <p className={ styles.text }>позвоните нам:</p>
                         <a className={ styles.tell } href="tel:+79039056206">8-903-905-62-06</a>
                     </div>
                 </div>
