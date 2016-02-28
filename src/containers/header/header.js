@@ -21,7 +21,7 @@ export class Header extends Component {
                     </div>
                     <div className={ styles.auth }>
                         <span className={ styles.cont_text }>Доставка продуктов по г. Новосибирск</span>
-                        <p className={ styles.cont_text_min }><sup>*</sup>Этот проект создан на Hackathon Novosibirs от
+                        <p className={ styles.cont_text_min }><sup>*</sup>Этот проект создан на Hackathon Novosibirsk от
                             2Gis</p>
                     </div>
                     <Cart CountProd={ this.props.productsCount }/>
